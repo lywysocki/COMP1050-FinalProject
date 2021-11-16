@@ -30,7 +30,13 @@ public class Hand extends Dice{
 	}
 	
 	
-	//takes in getHandValue and either 3, 4, or 5 for k to see if the hand fits 3 of a kind, 4 of a kind, or Yahtzee
+	/**
+	 * takes in getHandValue and either 3, 4, or 5 for k
+	 * to see if the hand fits 3 of a kind, 4 of a kind, or Yahtzee
+	 * @param values dice hand
+	 * @param k how many duplicates looking for
+	 * @return if there are k amount of repeated values
+	 */
 	public static boolean hasAmountOf(int[] values, int k) {
 		boolean isOfAKind=false;
 		int i=0;
@@ -59,6 +65,11 @@ public class Hand extends Dice{
 	
 	}
 	
+	/**
+	 * 
+	 * @param v dice values
+	 * @return true if hand is a full house
+	 */
 	public static boolean isFullHouse(int[] v) {
 		int value1 = v[0];
 		int value2 = v[1];
@@ -70,5 +81,89 @@ public class Hand extends Dice{
 		
 		return true;
 	}
+	
+	/**
+	 * 
+	 * @param v dice values
+	 * @param k number looking for in array
+	 * @return true if value is in the array
+	 */
+	public static boolean hasValue(int[] v, int k) {
+		for (int i=0; i<v.length; i++) {
+			if (v[i]==k) {
+				return true;
+			}
+		}
+		return false;
+	}
+	/**
+	 * 
+	 * @param v dice values
+	 * @return true if hand is straight of size 4 or 5
+	 */
+	public static boolean isSmallStraight(int[] v) {
+		
+		if (hasValue(v, 3)==false) {
+			return false;
+		}
+		else if (hasValue(v, 4)==false) {
+			return false;
+		}
+		else if (hasValue(v, 1) && hasValue(v, 2)){
+			return true;
+		}
+		else if (hasValue(v, 2) && hasValue(v, 5)) {
+			return true;
+		}
+		else if (hasValue(v, 5) && hasValue(v, 6)) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	/**
+	 * 
+	 * @param v dice values
+	 * @return true if hand is straight of size 4 or 5
+	 */
+	public static boolean isLargeStraight(int[] v) {
+		
+		if (hasValue(v, 3)==false) {
+			return false;
+		}
+		else if (hasValue(v, 4)==false) {
+			return false;
+		}
+		else if (hasValue(v, 1) && hasValue(v, 2) && hasValue(v, 5)){
+			return true;
+		}
+		else if (hasValue(v, 2) && hasValue(v, 5) && hasValue(v, 6)) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
