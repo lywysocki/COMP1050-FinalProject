@@ -14,6 +14,8 @@ public class ScoreCard {
 		int[] lower = {0, 0, 0, 0, 0};
 		// lower[0]=three of a kind, lower[1]=four of a kind, lower[2]= small straight
 		// lower[3]=large straight, lower[4]=chance
+		
+		
 	}
 	
 	
