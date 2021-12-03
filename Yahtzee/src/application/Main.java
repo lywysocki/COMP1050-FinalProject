@@ -34,6 +34,9 @@ public class Main extends Application {
 	int amtAI=0;
 	int amtTotal=0;
 	ArrayList<GenericPlayer> players = new ArrayList<GenericPlayer>();
+	ArrayList<Scene> humScenes = new ArrayList<Scene>();
+	ArrayList<Scene> AiScenes = new ArrayList<Scene>();
+	ArrayList<BorderPane> playPane = new ArrayList<BorderPane>();
 	
 	
 
@@ -76,15 +79,7 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) {
-		primaryStage.setTitle("Yahtzee");
-		
-//Main Gameplay Scene
-		
-		BorderPane x = new BorderPane();
-		Scene s3 = new Scene(x, 500, 500);
-		for (int i=0; i<amtHum; i++) {
-			
-		}
+		primaryStage.setTitle("Yahtzee");		
 		
 		
 		
@@ -116,19 +111,27 @@ public class Main extends Application {
 		
 	//setting amount of players based on text input and pressing button
 		ent.setOnAction(new EventHandler<ActionEvent>() {
-
 			@Override
 			public void handle(ActionEvent event) {
 				if(isInt(humIn.getText(), aiIn.getText())) {
 					amtHum = intStringToInt(humIn.getText());
 					amtAI = intStringToInt(aiIn.getText());
 					amtTotal=amtHum+amtAI;
-					primaryStage.setScene(s3);
+					for (int i=0; i<amtTotal; i++) {
+						playPane.add(i, new BorderPane());
+					}
+					for (int i=0; i<amtHum; i++) {
+						humScenes.add(i, new Scene(playPane.get(i), 500, 500));
+					}
+					for (int i=0; i<amtAI; i++) {
+						AiScenes.add(i, new Scene(playPane.get(i+amtHum), 500, 500));
+					}
 				}
 			}
 			
 		});
 		
+		 
 		Scene s2 = new Scene(numberInput, 500, 300);	
 		
 		
@@ -148,6 +151,7 @@ public class Main extends Application {
 		rules.add(start, 0, 0);
 		intro.setCenter(rules);
 		Scene s1 = new Scene(intro, 500, 500);
+		
 		
 		
 		
