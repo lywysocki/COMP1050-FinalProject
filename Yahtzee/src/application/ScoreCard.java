@@ -36,7 +36,7 @@ public class ScoreCard {
 		upper[2]=amt;
 	}
 	
-	public void setFours(int amt) {
+	public void seFours(int amt) {
 		upper[3]=amt;
 	}
 	

@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.7631578947368421" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GameController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <SplitPane dividerPositions="0.15604026845637584" layoutX="199.0" layoutY="124.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: BLUE;">
+                     <children>
+                        <Button layoutX="60.0" layoutY="21.0" mnemonicParsing="false" onAction="#Roll" prefHeight="48.0" prefWidth="485.0" text="ROLL" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="21.0" />
+                     </children></AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <ImageView fx:id="d1" fitHeight="64.0" fitWidth="64.0" layoutX="57.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+                           <image> 
+                              <Image url="@d1.jpg" />
+                           </image></ImageView>
+                        <ImageView fx:id="d2" fitHeight="64.0" fitWidth="64.0" layoutX="147.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@d1.jpg" />
+                           </image></ImageView>
+                        <ImageView fx:id="d3" fitHeight="64.0" fitWidth="64.0" layoutX="238.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@d1.jpg" />
+                           </image></ImageView>
+                        <ImageView fx:id="d4" fitHeight="64.0" fitWidth="64.0" layoutX="327.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@d1.jpg" />
+                           </image></ImageView>
+                        <ImageView fx:id="d5" fitHeight="64.0" fitWidth="64.0" layoutX="418.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@d1.jpg" />
+                           </image></ImageView>
+                        <Button fx:id="beginButton" layoutX="276.0" layoutY="102.0" mnemonicParsing="false" onAction="#Begin" text="BEGIN!" />
+                        <CheckBox fx:id="check1" layoutX="65.0" layoutY="272.0" mnemonicParsing="false" onAction="#Keep1" text="Keep" />
+                        <CheckBox fx:id="check2" layoutX="155.0" layoutY="272.0" mnemonicParsing="false" onAction="#Keep2" text="Keep" />
+                        <CheckBox fx:id="check3" layoutX="246.0" layoutY="272.0" mnemonicParsing="false" onAction="#Keep3" text="Keep" />
+                        <CheckBox fx:id="check4" layoutX="335.0" layoutY="272.0" mnemonicParsing="false" onAction="#Keep4" text="Keep" />
+                        <CheckBox fx:id="check5" layoutX="426.0" layoutY="272.0" mnemonicParsing="false" onAction="#Keep5" text="Keep" />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <GridPane fx:id="Player1" alignment="CENTER" layoutX="10.0" layoutY="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="122.0" minWidth="10.0" prefWidth="122.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="122.0" minWidth="10.0" prefWidth="34.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="88.0" minWidth="10.0" prefWidth="71.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="135.0" prefWidth="209.0" style="-fx-background-color: GREY;" text="UPPER SECTION" textFill="#400000" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: GREY;" text="SCORE" textFill="#400000" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="126.0" text="ONES" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="123.0" text="TWOS" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="122.0" text="THREES" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="123.0" text="FOURS" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="125.0" text="FIVES" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="138.0" text="SIXES" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="122.0" text="TOTAL SCORE" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="127.0" text="BONUS" GridPane.rowIndex="9">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="133.0" text="TOTAL UPPER" GridPane.rowIndex="10">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="242.0" prefWidth="352.0" style="-fx-background-color: GREY;" text="LOWER SECTION" textFill="#400000" GridPane.rowIndex="11">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="125.0" text="3 OF A KND" GridPane.rowIndex="12">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="126.0" text="4 OF A KIND" GridPane.rowIndex="13">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="133.0" text="FULL HOUSE" GridPane.rowIndex="14">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="122.0" text="SM. STRAIGHT" GridPane.rowIndex="15">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="127.0" text="LG. STRAIGHT" GridPane.rowIndex="16">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="126.0" text="YAHTZEE" GridPane.rowIndex="17">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="123.0" text="CHANCE" GridPane.rowIndex="18">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="126.0" text="BONUS YAHTZEE" GridPane.rowIndex="19">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="128.0" text="TOTAL LOWER" GridPane.rowIndex="20">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="121.0" text="TOTAL UPPER" GridPane.rowIndex="21">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="125.0" text="GRAND TOTAL" GridPane.rowIndex="22">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="103.0" prefWidth="152.0" style="-fx-background-color: GREY;" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="122.0" prefWidth="265.0" text="PLAYER 1" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="13" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="14" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="15" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="16" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="17" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="18" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="19" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="20" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="21" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="22" />
+                  <Label prefHeight="103.0" prefWidth="77.0" style="-fx-background-color: grey;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label prefHeight="69.0" prefWidth="48.0" style="-fx-background-color: grey;" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="17" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="18" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="19" />
+               </children>
+            </GridPane>
+            <GridPane fx:id="Player2" alignment="CENTER" gridLinesVisible="true" layoutX="20.0" layoutY="20.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="122.0" minWidth="10.0" prefWidth="122.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="122.0" minWidth="10.0" prefWidth="34.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="88.0" minWidth="10.0" prefWidth="71.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="135.0" prefWidth="209.0" style="-fx-background-color: GREY;" text="UPPER SECTION" textFill="#400000" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: GREY;" text="SCORE" textFill="#400000" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="126.0" text="ONES" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="123.0" text="TWOS" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="122.0" text="THREES" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="123.0" text="FOURS" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="125.0" text="FIVES" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="138.0" text="SIXES" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="122.0" text="TOTAL SCORE" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="127.0" text="BONUS" GridPane.rowIndex="9">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="133.0" text="TOTAL UPPER" GridPane.rowIndex="10">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="242.0" prefWidth="352.0" style="-fx-background-color: GREY;" text="LOWER SECTION" textFill="#400000" GridPane.rowIndex="11">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="125.0" text="3 OF A KND" GridPane.rowIndex="12">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="126.0" text="4 OF A KIND" GridPane.rowIndex="13">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="133.0" text="FULL HOUSE" GridPane.rowIndex="14">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="122.0" text="SM. STRAIGHT" GridPane.rowIndex="15">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="127.0" text="LG. STRAIGHT" GridPane.rowIndex="16">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="126.0" text="YAHTZEE" GridPane.rowIndex="17">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="123.0" text="CHANCE" GridPane.rowIndex="18">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="126.0" text="BONUS YAHTZEE" GridPane.rowIndex="19">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="128.0" text="TOTAL LOWER" GridPane.rowIndex="20">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="121.0" text="TOTAL UPPER" GridPane.rowIndex="21">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="125.0" text="GRAND TOTAL" GridPane.rowIndex="22">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="103.0" prefWidth="152.0" style="-fx-background-color: GREY;" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="122.0" prefWidth="265.0" text="PLAYER 2" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="13" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="14" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="15" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="16" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="17" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="18" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="19" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="20" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="21" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="22" />
+                  <Label prefHeight="103.0" prefWidth="77.0" style="-fx-background-color: grey;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label prefHeight="69.0" prefWidth="48.0" style="-fx-background-color: grey;" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="17" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="18" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="19" />
+               </children>
+            </GridPane>
+            <GridPane fx:id="Player3" alignment="CENTER" gridLinesVisible="true" layoutX="20.0" layoutY="20.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="122.0" minWidth="10.0" prefWidth="122.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="122.0" minWidth="10.0" prefWidth="34.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="88.0" minWidth="10.0" prefWidth="71.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="135.0" prefWidth="209.0" style="-fx-background-color: GREY;" text="UPPER SECTION" textFill="#400000" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: GREY;" text="SCORE" textFill="#400000" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="126.0" text="ONES" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="123.0" text="TWOS" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="122.0" text="THREES" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="123.0" text="FOURS" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="125.0" text="FIVES" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="138.0" text="SIXES" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="122.0" text="TOTAL SCORE" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="127.0" text="BONUS" GridPane.rowIndex="9">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="133.0" text="TOTAL UPPER" GridPane.rowIndex="10">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="242.0" prefWidth="352.0" style="-fx-background-color: GREY;" text="LOWER SECTION" textFill="#400000" GridPane.rowIndex="11">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="125.0" text="3 OF A KND" GridPane.rowIndex="12">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="126.0" text="4 OF A KIND" GridPane.rowIndex="13">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="133.0" text="FULL HOUSE" GridPane.rowIndex="14">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="122.0" text="SM. STRAIGHT" GridPane.rowIndex="15">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="127.0" text="LG. STRAIGHT" GridPane.rowIndex="16">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="126.0" text="YAHTZEE" GridPane.rowIndex="17">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="123.0" text="CHANCE" GridPane.rowIndex="18">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="126.0" text="BONUS YAHTZEE" GridPane.rowIndex="19">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="128.0" text="TOTAL LOWER" GridPane.rowIndex="20">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="121.0" text="TOTAL UPPER" GridPane.rowIndex="21">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="125.0" text="GRAND TOTAL" GridPane.rowIndex="22">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="103.0" prefWidth="152.0" style="-fx-background-color: GREY;" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="122.0" prefWidth="265.0" text="PLAYER 3" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="13" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="14" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="15" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="16" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="17" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="18" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="19" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="20" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="21" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="22" />
+                  <Label prefHeight="103.0" prefWidth="77.0" style="-fx-background-color: grey;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label prefHeight="69.0" prefWidth="48.0" style="-fx-background-color: grey;" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="17" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="18" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="19" />
+               </children>
+            </GridPane>
+            <GridPane fx:id="Player4" alignment="CENTER" gridLinesVisible="true" layoutX="30.0" layoutY="30.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="122.0" minWidth="10.0" prefWidth="122.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="122.0" minWidth="10.0" prefWidth="34.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="88.0" minWidth="10.0" prefWidth="71.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="135.0" prefWidth="209.0" style="-fx-background-color: GREY;" text="UPPER SECTION" textFill="#400000" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: GREY;" text="SCORE" textFill="#400000" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="126.0" text="ONES" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="123.0" text="TWOS" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="122.0" text="THREES" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="123.0" text="FOURS" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="125.0" text="FIVES" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="138.0" text="SIXES" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="122.0" text="TOTAL SCORE" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="127.0" text="BONUS" GridPane.rowIndex="9">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="133.0" text="TOTAL UPPER" GridPane.rowIndex="10">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="242.0" prefWidth="352.0" style="-fx-background-color: GREY;" text="LOWER SECTION" textFill="#400000" GridPane.rowIndex="11">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="125.0" text="3 OF A KND" GridPane.rowIndex="12">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="126.0" text="4 OF A KIND" GridPane.rowIndex="13">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="133.0" text="FULL HOUSE" GridPane.rowIndex="14">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="122.0" text="SM. STRAIGHT" GridPane.rowIndex="15">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="127.0" text="LG. STRAIGHT" GridPane.rowIndex="16">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="126.0" text="YAHTZEE" GridPane.rowIndex="17">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="123.0" text="CHANCE" GridPane.rowIndex="18">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="126.0" text="BONUS YAHTZEE" GridPane.rowIndex="19">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="128.0" text="TOTAL LOWER" GridPane.rowIndex="20">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="121.0" text="TOTAL UPPER" GridPane.rowIndex="21">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="125.0" text="GRAND TOTAL" GridPane.rowIndex="22">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="103.0" prefWidth="152.0" style="-fx-background-color: GREY;" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="122.0" prefWidth="265.0" text="PLAYER 4" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="13" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="14" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="15" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="16" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="17" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="18" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="19" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="20" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="21" />
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="22" />
+                  <Label prefHeight="103.0" prefWidth="77.0" style="-fx-background-color: grey;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label prefHeight="69.0" prefWidth="48.0" style="-fx-background-color: grey;" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="17" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="18" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="19" />
+               </children>
+            </GridPane>
+         </children></AnchorPane>
+  </items>
+</SplitPane>
