@@ -60,6 +60,31 @@ public class GamePlayController {
     private Label fives;
     @FXML
     private Label sixes;
+    @FXML
+    private Label bonus;
+    @FXML
+    private Label upperTotal1;
+    @FXML
+    private Label tok;
+    @FXML
+    private Label fok;
+    @FXML
+    private Label fh;
+    @FXML
+    private Label smStraight;
+    @FXML
+    private Label lgStraight;
+    @FXML
+    private Label chance;
+    @FXML
+    private Label yahtzee;
+    @FXML
+    private Label lowerTotal;
+    @FXML
+    private Label upperTotal2;
+    @FXML
+    private Label grandTotal;
+    
     
     
     @FXML
@@ -102,6 +127,19 @@ public class GamePlayController {
 			}
 			
 		}
+		
+		//set labels
+		ones.setText(String.format("%d", Hand.upperScoreCalc(1, h.getHandValue())));
+		twos.setText(String.format("%d", Hand.upperScoreCalc(2, h.getHandValue())));
+		threes.setText(String.format("%d", Hand.upperScoreCalc(3, h.getHandValue())));
+		fours.setText(String.format("%d", Hand.upperScoreCalc(4, h.getHandValue())));
+		fives.setText(String.format("%d", Hand.upperScoreCalc(5, h.getHandValue())));
+		sixes.setText(String.format("%d", Hand.upperScoreCalc(6, h.getHandValue())));
+		
+	
+		
+		
+		
     }
     
     
@@ -162,7 +200,7 @@ public class GamePlayController {
      * @param event
      */
     void chooseChance(ActionEvent event) {
-
+    	
     }
 
     @FXML

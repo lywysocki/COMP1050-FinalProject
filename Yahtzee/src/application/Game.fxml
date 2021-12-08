@@ -28,31 +28,31 @@
                      </children></AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: green;">
                      <children>
-                        <ImageView fx:id="d1" fitHeight="64.0" fitWidth="64.0" layoutX="57.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="d1" fitHeight="90.0" fitWidth="76.0" layoutX="27.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
                            <image> 
                               <Image url="@d1.jpg" />
                            </image></ImageView>
-                        <ImageView fx:id="d2" fitHeight="64.0" fitWidth="64.0" layoutX="147.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="d2" fitHeight="90.0" fitWidth="76.0" layoutX="141.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@d1.jpg" />
                            </image></ImageView>
-                        <ImageView fx:id="d3" fitHeight="64.0" fitWidth="64.0" layoutX="238.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="d3" fitHeight="90.0" fitWidth="76.0" layoutX="263.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@d1.jpg" />
                            </image></ImageView>
-                        <ImageView fx:id="d4" fitHeight="64.0" fitWidth="64.0" layoutX="327.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="d4" fitHeight="76.0" fitWidth="83.0" layoutX="383.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@d1.jpg" />
                            </image></ImageView>
-                        <ImageView fx:id="d5" fitHeight="64.0" fitWidth="64.0" layoutX="418.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="d5" fitHeight="76.0" fitWidth="76.0" layoutX="493.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@d1.jpg" />
                            </image></ImageView>
-                        <CheckBox fx:id="check1" layoutX="65.0" layoutY="272.0" mnemonicParsing="false" onAction="#Keep1" text="Keep" textFill="WHITE" />
+                        <CheckBox fx:id="check1" layoutX="40.0" layoutY="272.0" mnemonicParsing="false" onAction="#Keep1" text="Keep" textFill="WHITE" />
                         <CheckBox fx:id="check2" layoutX="155.0" layoutY="272.0" mnemonicParsing="false" onAction="#Keep2" text="Keep" textFill="WHITE" />
-                        <CheckBox fx:id="check3" layoutX="246.0" layoutY="272.0" mnemonicParsing="false" onAction="#Keep3" text="Keep" textFill="WHITE" />
-                        <CheckBox fx:id="check4" layoutX="335.0" layoutY="272.0" mnemonicParsing="false" onAction="#Keep4" text="Keep" textFill="WHITE" />
-                        <CheckBox fx:id="check5" layoutX="426.0" layoutY="272.0" mnemonicParsing="false" onAction="#Keep5" text="Keep" textFill="WHITE" />
+                        <CheckBox fx:id="check3" layoutX="277.0" layoutY="272.0" mnemonicParsing="false" onAction="#Keep3" text="Keep" textFill="WHITE" />
+                        <CheckBox fx:id="check4" layoutX="397.0" layoutY="272.0" mnemonicParsing="false" onAction="#Keep4" text="Keep" textFill="WHITE" />
+                        <CheckBox fx:id="check5" layoutX="506.0" layoutY="272.0" mnemonicParsing="false" onAction="#Keep5" text="Keep" textFill="WHITE" />
                         <Button layoutX="263.0" layoutY="387.0" mnemonicParsing="false" onAction="#toNextPlayer" text="Next Player" />
                      </children>
                   </AnchorPane>
@@ -163,7 +163,7 @@
                         <Insets top="2.0" />
                      </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="133.0" text="TOTAL UPPER" GridPane.rowIndex="9">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="133.0" text="UPPER TOTAL" GridPane.rowIndex="9">
                      <font>
                         <Font size="13.0" />
                      </font>
@@ -201,22 +201,22 @@
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="126.0" text="YAHTZEE" GridPane.rowIndex="16">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="126.0" text="YAHTZEE" GridPane.rowIndex="17">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="123.0" text="CHANCE" GridPane.rowIndex="17">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="123.0" text="CHANCE" GridPane.rowIndex="16">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="128.0" text="TOTAL LOWER" GridPane.rowIndex="18">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="128.0" text="LOWER TOTAL" GridPane.rowIndex="18">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="121.0" text="TOTAL UPPER" GridPane.rowIndex="19">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="121.0" text="UPPER TOTAL" GridPane.rowIndex="19">
                      <font>
                         <Font size="13.0" />
                      </font>
@@ -227,24 +227,24 @@
                      </font>
                   </Label>
                   <Label prefHeight="103.0" prefWidth="152.0" style="-fx-background-color: green;" GridPane.columnIndex="2" GridPane.rowIndex="10" />
-                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <Label fx:id="twos" alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Label fx:id="threes" alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                   <Label fx:id="ones" alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="9" />
-                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="11" />
-                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="12" />
-                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="13" />
-                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="14" />
-                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="15" />
-                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="16" />
-                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="17" />
-                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="18" />
-                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="19" />
-                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="20" />
+                  <Label fx:id="fours" alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <Label fx:id="fives" alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                  <Label fx:id="sixes" alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                  <Label fx:id="bonus" alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                  <Label fx:id="upperTotal1" alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                  <Label fx:id="tok" alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+                  <Label fx:id="fok" alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+                  <Label fx:id="fh" alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="13" />
+                  <Label fx:id="smStraight" alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="14" />
+                  <Label fx:id="lgStraight" alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="15" />
+                  <Label fx:id="chance" alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="16" />
+                  <Label fx:id="yahtzee" alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="17" />
+                  <Label fx:id="lowerTotal" alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="18" />
+                  <Label fx:id="upperTotal2" alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="19" />
+                  <Label fx:id="grandTotal" alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="20" />
                   <Label alignment="BOTTOM_RIGHT" prefHeight="40.0" prefWidth="21.0" style="-fx-background-color: green;" textAlignment="CENTER" textFill="YELLOW" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <opaqueInsets>
                         <Insets />

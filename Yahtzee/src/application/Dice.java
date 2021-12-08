@@ -14,7 +14,7 @@ public class Dice {
 		roll();
 	}
 	public String getImage() {
-		return s[getValue()];
+		return s[getValue()-1];
 	}
 	
 	public int getValue() { // gets face value of die and returns as int
@@ -22,7 +22,8 @@ public class Dice {
 	}
 	
 	public void roll() { // rolls die 1 thru 6
-		diceValue = (int)(Math.random()*(6));
+		Random rand = new Random();
+		diceValue = rand.nextInt(6)+1;
 	}
 	
 	public void toggleKeep() { // switches between being kept or not kept
