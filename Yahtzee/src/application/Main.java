@@ -31,8 +31,6 @@ import javafx.scene.web.WebView;
 
 
 public class Main extends Application {
-	
-	public int amtHum=0;
 
 	@Override
 	public void start(Stage primaryStage) throws IOException {
@@ -40,12 +38,10 @@ public class Main extends Application {
 		Scene s = new Scene(startParent);
 		primaryStage.setScene(s);
 		primaryStage.show();
-		
-		
 	}
-	
-	
+
 	public static void main(String[] args) {
 		launch(args);
 	}
+	
 }

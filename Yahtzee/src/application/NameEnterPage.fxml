@@ -10,7 +10,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: green;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.NameEnterPageController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="45.0" layoutX="159.0" layoutY="167.0" opacity="0.55" stroke="BLACK" width="484.0" />
-      <Label fx:id="namePromptLabel" layoutX="166.0" layoutY="169.0" text="Player 1, please enter your name:" textOverrun="WORD_ELLIPSIS">
+      <Label fx:id="playerNamePromptLabel" layoutX="166.0" layoutY="169.0" textOverrun="WORD_ELLIPSIS">
          <font>
             <Font name="Segoe UI Black" size="29.0" />
          </font>

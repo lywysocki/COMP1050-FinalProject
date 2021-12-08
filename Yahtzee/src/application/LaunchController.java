@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -17,9 +18,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-public class LaunchController extends Controller{
-	@FXML
-	private URL Location;
+public class LaunchController {
+	
+	public int amtHum;
+	public int amtAI;
+	public int amtTotal;
+	public ArrayList<String> playerNameStrings= new ArrayList<String>();
+	public ArrayList<Label> playerNameLabels= new ArrayList<Label>();
+	public ArrayList<Player> humPlayersList = new ArrayList<Player>();
 	
 	@FXML
 	private TextField humPlayers;
@@ -74,22 +80,27 @@ public class LaunchController extends Controller{
 			for(int i=0; i<amtHum; i++) {
 				humPlayersList.add(new Player());
 			}
-		
+			
+			
+			
 			//Parent nameInput = FXMLLoader.load(getClass().getResource("NameEnterPage.fxml"));
-			//Scene nameInputScene = new Scene(nameInput);
-			//Label namePromptLabel= new Label("Player 1 please enter your name:");
-			//Stage window2 = (Stage)((Node)event.getSource()).getScene().getWindow();
-			//window2.setScene(nameInputScene);
-			//window2.show();
-		
-		
-			Scene gameView = new Scene(game);			
+			
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(getClass().getResource("NameEnterPage.fxml"));
+			Parent nameInput = loader.load();
+			
+			Scene nameInputScene = new Scene(nameInput);
+			
+			NameEnterPageController nepController = loader.getController();
+			nepController.initData(humPlayersList);
+			
 			Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-			window.setScene(gameView);
+			window.setScene(nameInputScene);
 			window.show();
+
 		}
-		
 	}
+	
 	
 }
 
