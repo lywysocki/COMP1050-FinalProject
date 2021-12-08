@@ -3,16 +3,47 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="462.0" prefWidth="574.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.StartController">
    <children>
-      <AnchorPane prefHeight="462.0" prefWidth="574.0">
+      <AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: green;">
          <children>
-            <Button layoutX="161.0" layoutY="174.0" mnemonicParsing="false" onAction="#launchScreen" prefHeight="114.0" prefWidth="252.0" text="Yahtzee!">
+            <Button layoutX="243.0" layoutY="457.0" mnemonicParsing="false" onAction="#launchScreen" prefHeight="109.0" prefWidth="313.0" text="Let's Play!">
                <font>
-                  <Font size="45.0" />
+                  <Font name="Segoe UI Black" size="45.0" />
                </font>
             </Button>
+            <Text fill="WHITE" layoutX="51.0" layoutY="139.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="5.0" text="Welcome to Yahtzee!">
+               <font>
+                  <Font name="Segoe UI Black" size="67.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="119.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Roll the dice for scoring combinations and get the highest score! ">
+               <font>
+                  <Font name="Segoe UI Semibold" size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="24.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="On the first roll, all five dice will roll. You can keep any dice you'd like, or reroll all dice. ">
+               <font>
+                  <Font name="Segoe UI Semibold" size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="51.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="On the second roll, any dice kept won't be rolled, so strategize for the best score.">
+               <font>
+                  <Font name="Segoe UI Semibold" size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="64.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You only get three rolls, and then you must select a scoring category to fill in. ">
+               <font>
+                  <Font name="Segoe UI Semibold" size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="324.0" layoutY="236.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="How to Play:">
+               <font>
+                  <Font name="Segoe UI Black" size="24.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
    </children>

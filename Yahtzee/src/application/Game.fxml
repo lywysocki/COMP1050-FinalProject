@@ -18,11 +18,14 @@
          <children>
             <SplitPane dividerPositions="0.15604026845637584" layoutX="199.0" layoutY="124.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <items>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: BLUE;">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: green;">
                      <children>
-                        <Button layoutX="60.0" layoutY="21.0" mnemonicParsing="false" onAction="#Roll" prefHeight="48.0" prefWidth="485.0" text="ROLL" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="21.0" />
+                        <Button layoutX="60.0" layoutY="21.0" mnemonicParsing="false" onAction="#Roll" prefHeight="48.0" prefWidth="485.0" text="ROLL" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="21.0">
+                           <font>
+                              <Font name="Segoe UI Black" size="24.0" />
+                           </font></Button>
                      </children></AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: green;">
                      <children>
                         <ImageView fx:id="d1" fitHeight="64.0" fitWidth="64.0" layoutX="57.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
                            <image> 
@@ -44,7 +47,6 @@
                            <image>
                               <Image url="@d1.jpg" />
                            </image></ImageView>
-                        <Button fx:id="beginButton" layoutX="276.0" layoutY="102.0" mnemonicParsing="false" onAction="#Begin" text="BEGIN!" />
                         <CheckBox fx:id="check1" layoutX="65.0" layoutY="272.0" mnemonicParsing="false" onAction="#Keep1" text="Keep" />
                         <CheckBox fx:id="check2" layoutX="155.0" layoutY="272.0" mnemonicParsing="false" onAction="#Keep2" text="Keep" />
                         <CheckBox fx:id="check3" layoutX="246.0" layoutY="272.0" mnemonicParsing="false" onAction="#Keep3" text="Keep" />
@@ -89,14 +91,14 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="135.0" prefWidth="209.0" style="-fx-background-color: GREY;" text="UPPER SECTION" textFill="#400000" GridPane.rowIndex="1">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="135.0" prefWidth="209.0" style="-fx-background-color: green;" text="Upper Section" textFill="YELLOW" GridPane.rowIndex="1">
                      <font>
-                        <Font size="13.0" />
+                        <Font name="Segoe UI Semibold" size="15.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: GREY;" text="SCORE" textFill="#400000" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: green;" text="Score" textFill="YELLOW" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
-                        <Font size="13.0" />
+                        <Font name="Segoe UI Semibold" size="15.0" />
                      </font>
                   </Label>
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="126.0" text="ONES" GridPane.rowIndex="2">
@@ -144,9 +146,9 @@
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="242.0" prefWidth="352.0" style="-fx-background-color: GREY;" text="LOWER SECTION" textFill="#400000" GridPane.rowIndex="11">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="242.0" prefWidth="352.0" style="-fx-background-color: green;" text="Lower Section" textFill="YELLOW" GridPane.rowIndex="11">
                      <font>
-                        <Font size="13.0" />
+                        <Font name="Segoe UI Semibold" size="15.0" />
                      </font>
                   </Label>
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="125.0" text="3 OF A KND" GridPane.rowIndex="12">
@@ -204,7 +206,7 @@
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Label prefHeight="103.0" prefWidth="152.0" style="-fx-background-color: GREY;" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+                  <Label prefHeight="103.0" prefWidth="152.0" style="-fx-background-color: green;" GridPane.columnIndex="2" GridPane.rowIndex="11" />
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="122.0" prefWidth="265.0" text="PLAYER 1" textAlignment="CENTER">
                      <font>
                         <Font size="18.0" />
@@ -230,8 +232,8 @@
                   <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="20" />
                   <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="21" />
                   <Label alignment="CENTER" prefHeight="60.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="22" />
-                  <Label prefHeight="103.0" prefWidth="77.0" style="-fx-background-color: grey;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label prefHeight="69.0" prefWidth="48.0" style="-fx-background-color: grey;" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                  <Label prefHeight="103.0" prefWidth="77.0" style="-fx-background-color: green;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label prefHeight="69.0" prefWidth="48.0" style="-fx-background-color: green;" GridPane.columnIndex="1" GridPane.rowIndex="11" />
                   <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />

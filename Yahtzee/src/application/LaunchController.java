@@ -12,11 +12,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-public class LaunchController {
+public class LaunchController extends Controller{
 	@FXML
 	private URL Location;
 	
@@ -25,14 +26,6 @@ public class LaunchController {
 	
 	@FXML
 	private TextField AIPlayers;
-	
-	int amtHum=0;
-	int amtAI=0;
-	int amtTotal=0;
-	ArrayList<GenericPlayer> players = new ArrayList<GenericPlayer>();
-	ArrayList<Scene> humScenes = new ArrayList<Scene>();
-	ArrayList<Scene> AiScenes = new ArrayList<Scene>();
-	ArrayList<BorderPane> playPane = new ArrayList<BorderPane>();
 	
 	/**
 	 * Tests if a string can be converted into an int
@@ -69,12 +62,32 @@ public class LaunchController {
 	public void createGameScenes(ActionEvent event) throws IOException {
 		
 		Parent game = FXMLLoader.load(getClass().getResource("Game.fxml"));
-		amtHum = intStringToInt(humPlayers.getText());
-		amtAI = intStringToInt(AIPlayers.getText());
-		Scene gameView = new Scene(game);
-		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-		window.setScene(gameView);
-		window.show();
+		if(isInt(humPlayers.getText(), AIPlayers.getText())==false) {
+			humPlayers.deleteText(0, humPlayers.getText().length());
+			AIPlayers.deleteText(0, AIPlayers.getText().length());
+			
+		}
+		else {
+			amtHum = intStringToInt(humPlayers.getText());
+			amtAI = intStringToInt(AIPlayers.getText());
+			amtTotal=amtHum+amtAI;
+			for(int i=0; i<amtHum; i++) {
+				humPlayersList.add(new Player());
+			}
+		
+			//Parent nameInput = FXMLLoader.load(getClass().getResource("NameEnterPage.fxml"));
+			//Scene nameInputScene = new Scene(nameInput);
+			//Label namePromptLabel= new Label("Player 1 please enter your name:");
+			//Stage window2 = (Stage)((Node)event.getSource()).getScene().getWindow();
+			//window2.setScene(nameInputScene);
+			//window2.show();
+		
+		
+			Scene gameView = new Scene(game);			
+			Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+			window.setScene(gameView);
+			window.show();
+		}
 		
 	}
 	

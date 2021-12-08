@@ -11,6 +11,12 @@ abstract public class GenericPlayer extends Hand {
 		doneRolling = false;
 	}
 	
+
+	public GenericPlayer() {
+		super();
+		doneRolling=false;
+	}
+
 	/**
 	 * getter for doneRolling boolean
 	 * 

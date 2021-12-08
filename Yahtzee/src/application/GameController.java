@@ -75,4 +75,19 @@ public class GameController extends Hand{
 		a[4].keepOrRoll();
 	}
 	
+
+    @FXML
+    void oneChosen() {
+    	int score=0;
+    	for(int i=0; i<5; i++) {
+    		if (a[i].getValue()==1) {
+    			score+=1;
+    		}
+    	}
+    	
+    }
+	
+	
+	
+	
 }

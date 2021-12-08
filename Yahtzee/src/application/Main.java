@@ -32,7 +32,7 @@ import javafx.scene.web.WebView;
 
 public class Main extends Application {
 	
-	
+	public int amtHum=0;
 
 	@Override
 	public void start(Stage primaryStage) throws IOException {
