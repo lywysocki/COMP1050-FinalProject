@@ -110,15 +110,18 @@ public class Hand extends Dice{
 	 * @return true if hand is a full house
 	 */
 	public static boolean isFullHouse(int[] v) {
-		int value1 = v[0];
-		int value2 = v[1];
-		for (int i=0; i<v.length; i++) {
-			if (value1 != v[i] || value2 != v[i] ) {
-				return false;
-			}
+		int[] counts = new int[6];
+		for (int i=0; i<v.length; i++)
+		    //increase the relevant counter
+		    counts[v[i]-1]++;
+		//now check we've got a 2 and a 3
+		boolean check2 = false;
+		boolean check3 = false;
+		for (int i: counts) {
+		    check2 |= (i==2); //found 2 of some number
+		    check3 |= (i==3); //found 3 of some number
 		}
-		
-		return true;
+		return (check2 && check3);
 	}
 	
 	/**

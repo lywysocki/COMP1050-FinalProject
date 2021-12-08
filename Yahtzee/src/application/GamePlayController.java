@@ -18,6 +18,20 @@ public class GamePlayController {
 	private ArrayList<Player> players;
 	private ArrayList<String> names;
 	private Player currentPlayer;
+	private boolean onesFinal=false;
+	private boolean twosFinal=false;
+	private boolean threesFinal=false;
+	private boolean foursFinal=false;
+	private boolean fivesFinal=false;
+	private boolean sixesFinal=false;
+	private boolean tokFinal=false;
+	private boolean fokFinal=false;
+	private boolean fhFinal=false;
+	private boolean ssFinal=false;
+	private boolean lsFinal=false;
+	private boolean chanceFinal=false;
+	private boolean yahtzeeFinal=false;
+	
 
     @FXML
     private CheckBox check1;
@@ -61,7 +75,7 @@ public class GamePlayController {
     @FXML
     private Label sixes;
     @FXML
-    private Label bonus;
+    private Label bonus = new Label("35");
     @FXML
     private Label upperTotal1;
     @FXML
@@ -69,15 +83,15 @@ public class GamePlayController {
     @FXML
     private Label fok;
     @FXML
-    private Label fh;
+    private Label fh = new Label("25");
     @FXML
-    private Label smStraight;
+    private Label smStraight = new Label("30");
     @FXML
-    private Label lgStraight;
+    private Label lgStraight = new Label("40");
     @FXML
     private Label chance;
     @FXML
-    private Label yahtzee;
+    private Label yahtzee = new Label("50");
     @FXML
     private Label lowerTotal;
     @FXML
@@ -128,15 +142,75 @@ public class GamePlayController {
 			
 		}
 		
-		//set labels
-		ones.setText(String.format("%d", Hand.upperScoreCalc(1, h.getHandValue())));
-		twos.setText(String.format("%d", Hand.upperScoreCalc(2, h.getHandValue())));
-		threes.setText(String.format("%d", Hand.upperScoreCalc(3, h.getHandValue())));
-		fours.setText(String.format("%d", Hand.upperScoreCalc(4, h.getHandValue())));
-		fives.setText(String.format("%d", Hand.upperScoreCalc(5, h.getHandValue())));
-		sixes.setText(String.format("%d", Hand.upperScoreCalc(6, h.getHandValue())));
+		//set upper labels based on if theyre final or not
 		
-	
+		if(!onesFinal) {
+			ones.setText(String.format("%d", Hand.upperScoreCalc(1, h.getHandValue())));
+		}
+		if(!twosFinal) {
+			twos.setText(String.format("%d", Hand.upperScoreCalc(2, h.getHandValue())));
+		}
+		if(!threesFinal) {
+			threes.setText(String.format("%d", Hand.upperScoreCalc(3, h.getHandValue())));
+		}
+		if(!foursFinal) {
+			fours.setText(String.format("%d", Hand.upperScoreCalc(4, h.getHandValue())));
+		}
+		if(!fivesFinal) {
+			fives.setText(String.format("%d", Hand.upperScoreCalc(5, h.getHandValue())));
+		}
+		if(!sixesFinal) {
+			sixes.setText(String.format("%d", Hand.upperScoreCalc(6, h.getHandValue())));
+		}
+		if(!chanceFinal) {
+			chance.setText(String.format("%d", Hand.lowerScoreCalc(h.getHandValue())));
+		}
+		
+		
+		
+		//set lower labels based on if they fit the category and arent final
+		
+		if(Hand.hasAmountOf(h.getHandValue(), 3) && !tokFinal) {
+			tok.setText(String.format("%d", Hand.lowerScoreCalc(h.getHandValue())));
+		}
+		if(Hand.hasAmountOf(h.getHandValue(), 4) && !fokFinal) {
+			fok.setText(String.format("%d", Hand.lowerScoreCalc(h.getHandValue())));
+			
+			
+			
+		//reset constant values if dont fit category
+			
+		}
+		if(Hand.hasAmountOf(h.getHandValue(), 5) && !yahtzeeFinal) {
+			yahtzee.setVisible(true);
+		}
+		else if (!Hand.hasAmountOf(h.getHandValue(), 5)) {
+			yahtzee.setVisible(false);
+		}
+		
+		
+		if(Hand.isFullHouse(h.getHandValue()) && !fhFinal) {
+			fh.setVisible(true);
+		}
+		else if (!Hand.isFullHouse(h.getHandValue())) {
+			fh.setVisible(false);
+		}
+		
+		
+		if(Hand.isSmallStraight(h.getHandValue()) && !ssFinal) {
+			smStraight.setVisible(true);
+		}
+		else if (!Hand.isSmallStraight(h.getHandValue())) {
+			smStraight.setVisible(false);
+		}
+		
+		
+		if(Hand.isLargeStraight(h.getHandValue()) && !lsFinal) {
+			lgStraight.setVisible(true);
+		}
+		else if (!Hand.isLargeStraight(h.getHandValue())) {
+			lgStraight.setVisible(false);
+		}
 		
 		
 		
