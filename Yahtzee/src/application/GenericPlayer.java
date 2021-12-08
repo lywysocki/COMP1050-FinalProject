@@ -1,7 +1,7 @@
 package application;
 
 abstract public class GenericPlayer extends Hand {
-	protected String name;
+	public String name;
 	protected int playerNum;
 	protected boolean doneRolling;
 	
@@ -15,6 +15,10 @@ abstract public class GenericPlayer extends Hand {
 	public GenericPlayer() {
 		super();
 		doneRolling=false;
+	}
+	
+	public void setName(String name) {
+		this.name=name;
 	}
 
 	/**

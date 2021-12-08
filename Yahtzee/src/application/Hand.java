@@ -30,6 +30,41 @@ public class Hand extends Dice{
 	}
 	
 	
+	
+	/**
+	 * 
+	 * @param k value of the category
+	 * @param values hand of dice
+	 * @return total score of the dice that match the category's number
+	 */
+	public static int upperScoreCalc(int k, int[] values) {
+		int score=0;
+		for(int i=0; i<values.length; i++) {
+			if(values[i]==k) {
+				score+=k;
+			}
+		}
+		return score;
+	}
+
+	
+	
+	/**
+	 * 
+	 * @param values hand of dice
+	 * @return total score of all dice added 
+	 */
+	public static int lowerScoreCalc(int[] values) {
+		int score=0;
+		for(int i=0; i<values.length; i++) {
+			score+=values[i];
+		}
+		return score;
+	}
+	
+	
+	
+	
 	/**
 	 * takes in getHandValue and either 3, 4, or 5 for k
 	 * to see if the hand fits 3 of a kind, 4 of a kind, or Yahtzee
@@ -64,6 +99,8 @@ public class Hand extends Dice{
 		return isOfAKind;
 	
 	}
+	
+	
 	
 	/**
 	 * 

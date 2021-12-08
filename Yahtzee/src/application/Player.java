@@ -11,7 +11,7 @@ public class Player extends GenericPlayer{
 	}
 	
 	public void setName(String name) {
-		this.name=name;
+		super.setName(name);
 	}
 
 	@Override
@@ -21,7 +21,7 @@ public class Player extends GenericPlayer{
 	}
 
 	public String getName() {
-		return this.name;
+		return super.name;
 	}
 
 }

@@ -25,7 +25,7 @@ public class Dice {
 		diceValue = (int)(Math.random()*(6));
 	}
 	
-	public void keepOrRoll() { // switches between being kept or not kept
+	public void toggleKeep() { // switches between being kept or not kept
 		if (kept == false) kept = true;
 		else kept = false;
 	}

@@ -27,6 +27,7 @@ public class NameEnterPageController implements Initializable {
     private Label playerNamePromptLabel;
     
     private ArrayList<Player> players;
+    private ArrayList<String> names;
 
     @FXML
     private TextField playerNametf;
@@ -53,7 +54,8 @@ public class NameEnterPageController implements Initializable {
     		
     		Scene gamePlayScene = new Scene(gameView);
     		
-    		GameController gController = loader.getController();
+    		GamePlayController gController = loader.getController();
+    		gController.initData(players);
     		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
     		window.setScene(gamePlayScene);
     		window.show();
