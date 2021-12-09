@@ -178,6 +178,15 @@ public class GamePlayController {
 				
 			}
 			
+			//sets total, upper, lower scores
+			lowerTotal.setText(String.format("%d", players.get(currentPlayer).getTotalLower()));
+			upperTotal1.setText(String.format("%d", players.get(currentPlayer).getTotalUpper()));
+			upperTotal2.setText(String.format("%d", players.get(currentPlayer).getTotalUpper()));
+			grandTotal.setText(String.format("%d", players.get(currentPlayer).getTotalScore()));
+			
+			
+			
+			
 			//set upper labels based on if they're final or not
 			
 			if(!players.get(currentPlayer).onesFinal) {
@@ -255,6 +264,12 @@ public class GamePlayController {
 			}
 			else if (!Hand.isLargeStraight(h.getHandValue())&& !players.get(currentPlayer).lsFinal) {
 				lgStraight.setText("0");
+			}
+			
+			if (players.get(currentPlayer).getTotalUpper() >= 63) {
+				bonus.setText("35");
+			} else {
+				bonus.setText("0");
 			}
 			
 			rollCounter+=1;
