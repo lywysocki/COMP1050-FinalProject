@@ -9,16 +9,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: green;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LaunchController">
    <children>
-      <Label layoutX="95.0" layoutY="222.0" text="How many human players?" textFill="WHITE">
+      <Label layoutX="95.0" layoutY="222.0" text="How many players?" textFill="WHITE">
          <font>
             <Font name="Segoe UI Semibold" size="20.0" />
          </font></Label>
       <TextField fx:id="humPlayers" layoutX="522.0" layoutY="224.0" promptText="Enter Amount" />
-      <Label layoutX="95.0" layoutY="285.0" text="How many AI players?" textFill="WHITE">
-         <font>
-            <Font name="Segoe UI Semibold" size="20.0" />
-         </font></Label>
-      <TextField fx:id="AIPlayers" layoutX="522.0" layoutY="287.0" promptText="Enter Amount" />
       <Button layoutX="276.0" layoutY="468.0" mnemonicParsing="false" onAction="#createGameScenes" text="Start Game">
          <font>
             <Font name="Segoe UI Black" size="36.0" />

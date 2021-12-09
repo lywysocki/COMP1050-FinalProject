@@ -105,10 +105,12 @@ public class GamePlayController {
     private Label bonus = new Label("0");
     @FXML
     private Label upperTotal1=new Label("0");
+    
     @FXML
-    private Label tok=new Label("0");
+    private Label tok = new Label("0");
     @FXML
-    private Label fok=new Label("0");
+    private Label fok = new Label ("0");
+    
     @FXML
     private Label fh = new Label("0");
     @FXML
@@ -196,7 +198,7 @@ public class GamePlayController {
 			
 			
 			
-			//set lower labels based on if they fit the category and arent final
+			//set lower labels based on if they fit the category and aren't final
 			
 			if(Hand.hasAmountOf(h.getHandValue(), 3) && !players.get(currentPlayer).tokFinal) {
 				tok.setText(String.format("%d", Hand.lowerScoreCalc(h.getHandValue())));
@@ -270,7 +272,12 @@ public class GamePlayController {
      * @param event
      */
     void Keep1(ActionEvent event) {
-    	h.a[0].toggleKeep();
+    	if (check1.isSelected()) {
+    		h.a[0].setKeep(true);
+    	}
+    	else {
+    		h.a[0].setKeep(false);
+    	}
     }
 
     @FXML
@@ -280,7 +287,12 @@ public class GamePlayController {
      * @param event
      */
     void Keep2(ActionEvent event) {
-    	h.a[1].toggleKeep();
+    	if (check2.isSelected()) {
+    		h.a[1].setKeep(true);
+    	}
+    	else {
+    		h.a[1].setKeep(false);
+    	}
     }
 
     @FXML
@@ -290,7 +302,12 @@ public class GamePlayController {
      * @param event
      */
     void Keep3(ActionEvent event) {
-    	h.a[2].toggleKeep();
+    	if (check3.isSelected()) {
+    		h.a[2].setKeep(true);
+    	}
+    	else {
+    		h.a[2].setKeep(false);
+    	}
     }
 
     @FXML
@@ -300,7 +317,12 @@ public class GamePlayController {
      * @param event
      */
     void Keep4(ActionEvent event) {
-    	h.a[3].toggleKeep();
+    	if (check4.isSelected()) {
+    		h.a[3].setKeep(true);
+    	}
+    	else {
+    		h.a[3].setKeep(false);
+    	}
     }
 
     @FXML
@@ -310,7 +332,12 @@ public class GamePlayController {
      * @param event
      */
     void Keep5(ActionEvent event) {
-    	h.a[4].toggleKeep();
+    	if (check5.isSelected()) {
+    		h.a[4].setKeep(true);
+    	}
+    	else {
+    		h.a[4].setKeep(false);
+    	}
     }
 
 
@@ -479,6 +506,25 @@ public class GamePlayController {
     	yahtzee.setText(String.format("%d", players.get(currentPlayer).lower[6]));
     	
     	
+    	onesCheck.setSelected(false);
+    	twosCheck.setSelected(false);
+    	threesCheck.setSelected(false);
+    	foursCheck.setSelected(false);
+    	fivesCheck.setSelected(false);
+    	sixesCheck.setSelected(false);
+    	tokCheck.setSelected(false);
+    	fokCheck.setSelected(false);
+    	fhCheck.setSelected(false);
+    	smStraightCheck.setSelected(false);
+    	lgStraightCheck.setSelected(false);
+    	chanceCheck.setSelected(false);
+    	yahtzeeCheck.setSelected(false);
+    	
+    	check1.setSelected(false); h.a[0].setKeep(false);
+    	check2.setSelected(false); h.a[1].setKeep(false);
+    	check3.setSelected(false); h.a[2].setKeep(false);
+    	check4.setSelected(false); h.a[3].setKeep(false);
+    	check5.setSelected(false); h.a[4].setKeep(false);
     
     }
 }

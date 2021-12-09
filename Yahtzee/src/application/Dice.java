@@ -26,9 +26,8 @@ public class Dice {
 		diceValue = rand.nextInt(6)+1;
 	}
 	
-	public void toggleKeep() { // switches between being kept or not kept
-		if (kept == false) kept = true;
-		else kept = false;
+	public void setKeep(boolean k) { // switches between being kept or not kept
+		kept=k;
 	}
 	public void setValue(int i) {
 		diceValue = i;

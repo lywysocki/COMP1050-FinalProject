@@ -28,11 +28,11 @@
                      </children></AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: green;">
                      <children>
-                        <ImageView fx:id="d1" fitHeight="90.0" fitWidth="76.0" layoutX="27.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="d1" fitHeight="72.0" fitWidth="83.0" layoutX="27.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
                            <image> 
                               <Image url="@red.jpg" />
                            </image></ImageView>
-                        <ImageView fx:id="d2" fitHeight="90.0" fitWidth="76.0" layoutX="141.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="d2" fitHeight="74.0" fitWidth="90.0" layoutX="141.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@orange.jpg" />
                            </image></ImageView>
