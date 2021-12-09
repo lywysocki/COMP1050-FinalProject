@@ -552,32 +552,135 @@ public class GamePlayController {
     
     
     void colorChecker(Player player) {
-    	if (player.chanceFinal==true) chance.setTextFill(Color.RED);
-    	else chance.setTextFill(Color.BLACK);
-    	if (player.fhFinal==true) fh.setTextFill(Color.RED);
-    	else fh.setTextFill(Color.BLACK);
-    	if (player.fivesFinal==true) fives.setTextFill(Color.RED);
-    	else fives.setTextFill(Color.BLACK);
-    	if (player.fokFinal==true) fok.setTextFill(Color.RED);
-    	else fok.setTextFill(Color.BLACK);
-    	if (player.foursFinal==true) fours.setTextFill(Color.RED);
-    	else fours.setTextFill(Color.BLACK);
-    	if (player.lsFinal==true) lgStraight.setTextFill(Color.RED);
-    	else lgStraight.setTextFill(Color.BLACK);
-    	if (player.onesFinal==true) ones.setTextFill(Color.RED);
-    	else ones.setTextFill(Color.BLACK);
-    	if (player.sixesFinal==true) sixes.setTextFill(Color.RED);
-    	else sixes.setTextFill(Color.BLACK);
-    	if (player.ssFinal==true) smStraight.setTextFill(Color.RED);
-    	else smStraight.setTextFill(Color.BLACK);
-    	if (player.threesFinal==true) threes.setTextFill(Color.RED);
-    	else threes.setTextFill(Color.BLACK);
-    	if (player.tokFinal==true) tok.setTextFill(Color.RED);
-    	else tok.setTextFill(Color.BLACK);
-    	if (player.twosFinal==true) twos.setTextFill(Color.RED);
-    	else twos.setTextFill(Color.BLACK);
-    	if (player.yahtzeeFinal==true) yahtzee.setTextFill(Color.RED);
-    	else yahtzee.setTextFill(Color.BLACK);
+    	
+    	if (player.chanceFinal==true) {
+    		chance.setTextFill(Color.RED);
+    		chanceCheck.setVisible(false);
+    	}
+    	else {
+    		chance.setTextFill(Color.BLACK);
+    		chanceCheck.setVisible(true);
+    	}
+    	
+    	
+    	if (player.fhFinal==true) {
+    		fh.setTextFill(Color.RED);
+    		fhCheck.setVisible(false);
+    	}
+    	else {
+    		fh.setTextFill(Color.BLACK);
+    		chanceCheck.setVisible(true);
+    	}
+    	
+    	
+    	if (player.fivesFinal==true) {
+    		fives.setTextFill(Color.RED);
+    		fivesCheck.setVisible(false);
+    	}
+    	else {
+    		fives.setTextFill(Color.BLACK);
+    		fivesCheck.setVisible(true);
+    	}
+    	
+    	
+    	if (player.fokFinal==true) {
+    		fok.setTextFill(Color.RED);
+    		fokCheck.setVisible(false);
+    	}
+    	else {
+    		fok.setTextFill(Color.BLACK);
+    		fokCheck.setVisible(true);
+    	}
+    	
+    	
+    	if (player.foursFinal==true) {
+    		fours.setTextFill(Color.RED);
+    		foursCheck.setVisible(false);
+    	}
+    	else {
+    		fours.setTextFill(Color.BLACK);
+    		foursCheck.setVisible(true);
+    	}
+    	
+    	
+    	if (player.lsFinal==true) {
+    		lgStraight.setTextFill(Color.RED);
+    		lgStraightCheck.setVisible(false);
+    	}
+    	else {
+    		lgStraight.setTextFill(Color.BLACK);
+    		lgStraightCheck.setVisible(true);
+    	}
+    	
+    	
+    	if (player.onesFinal==true) {
+    		ones.setTextFill(Color.RED);
+    		onesCheck.setVisible(false);
+    	}
+    	else {
+    		ones.setTextFill(Color.BLACK);
+    		onesCheck.setVisible(true);
+    	}
+    	
+    	
+    	if (player.sixesFinal==true) {
+    		sixes.setTextFill(Color.RED);
+    		sixesCheck.setVisible(false);
+    	}
+    	else {
+    		sixes.setTextFill(Color.BLACK);
+    		sixesCheck.setVisible(true);
+    	}
+    	
+    	
+    	if (player.ssFinal==true) {
+    		smStraight.setTextFill(Color.RED);
+    		smStraightCheck.setVisible(false);
+    	}
+    	else {
+    		smStraight.setTextFill(Color.BLACK);
+    		smStraightCheck.setVisible(true);
+    	}
+    	
+    	
+    	if (player.threesFinal==true) {
+    		threes.setTextFill(Color.RED);
+    		threesCheck.setVisible(false);
+    	}
+    	else {
+    		threes.setTextFill(Color.BLACK);
+    		threesCheck.setVisible(true);
+    	}
+    	
+    	
+    	if (player.tokFinal==true) {
+    		tok.setTextFill(Color.RED);
+    		tokCheck.setVisible(false);
+    	}
+    	else {
+    		tok.setTextFill(Color.BLACK);
+    		tokCheck.setVisible(true);
+    	}
+    	
+    	
+    	if (player.twosFinal==true) {
+    		twos.setTextFill(Color.RED);
+    		twosCheck.setVisible(false);
+    	}
+    	else {
+    		twos.setTextFill(Color.BLACK);
+    		twosCheck.setVisible(true);
+    	}
+    	
+    	
+    	if (player.yahtzeeFinal==true) {
+    		yahtzee.setTextFill(Color.RED);
+    		yahtzeeCheck.setVisible(false);
+    	}
+    	else {
+    		yahtzee.setTextFill(Color.BLACK);
+    		yahtzeeCheck.setVisible(true);
+    	}
     }
     
     
@@ -598,7 +701,7 @@ public class GamePlayController {
     	if(currentPlayer==players.size()) {
     		currentPlayer=0;
     		turnCounter+=1;
-    		if (turnCounter>13) {
+    		if (turnCounter==13) {
     			FXMLLoader loader = new FXMLLoader();
         		loader.setLocation(getClass().getResource("End.fxml"));
         		Parent endView= loader.load();
