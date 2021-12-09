@@ -199,19 +199,18 @@ public class GamePlayController {
 			
 			
 			//set lower labels based on if they fit the category and aren't final
-			
-			if(Hand.hasAmountOf(h.getHandValue(), 3) && !players.get(currentPlayer).tokFinal) {
+			if (!Hand.hasAmountOf(h.getHandValue(), 3) && !players.get(currentPlayer).tokFinal) {
+				tok.setText("0");
+			}
+			else if(Hand.hasAmountOf(h.getHandValue(), 3) && !players.get(currentPlayer).tokFinal) {
 				tok.setText(String.format("%d", Hand.lowerScoreCalc(h.getHandValue())));
 			}
-			else if (!Hand.hasAmountOf(h.getHandValue(), 3) && !players.get(currentPlayer).tokFinal) {
-				yahtzee.setText("0");
+			if (!Hand.hasAmountOf(h.getHandValue(), 4) && !players.get(currentPlayer).fokFinal) {
+				fok.setText("0");
 			}
-			if(Hand.hasAmountOf(h.getHandValue(), 4) && !players.get(currentPlayer).fokFinal) {
+			else if(Hand.hasAmountOf(h.getHandValue(), 4) && !players.get(currentPlayer).fokFinal) {
 				fok.setText(String.format("%d", Hand.lowerScoreCalc(h.getHandValue())));
-			}
-			else if (!Hand.hasAmountOf(h.getHandValue(), 4) && !players.get(currentPlayer).fokFinal) {
-				yahtzee.setText("0");
-			}
+			} 
 				
 				
 			//reset constant values if don't fit category

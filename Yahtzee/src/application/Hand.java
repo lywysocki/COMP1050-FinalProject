@@ -75,31 +75,16 @@ public class Hand extends Dice{
 	 * @return if there are k amount of repeated values
 	 */
 	public static boolean hasAmountOf(int[] values, int k) {
-		boolean isOfAKind=false;
-		int i=0;
-		int count=1;
-		if (k<1 || values.length==0) {
-			return isOfAKind;
+		int count=0;
+		for (int n=1;n<6;n++) {
+			for (int x=0;x<values.length;x++) {
+				if (values[x]==n) count++;
+			}
+			if (count >= k) n=6;
+			else count=0;
 		}
-		else if (k>values.length) {
-			return isOfAKind;
-		}
-		else if(k==1) {
-			isOfAKind=true;
-			return isOfAKind;
-		}
-		else {			
-			while (i+1<values.length) {
-				count = (values[i+1]==values[i]) ? count+1:count;
-				if (count==k || count>k) {
-					isOfAKind=true;
-					return isOfAKind;
-					}
-				i++;
-			}	
-		}
-		return isOfAKind;
-	
+		if (count>=k) return true;
+		else return false;
 	}
 	
 	
