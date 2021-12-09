@@ -2,7 +2,6 @@ package application;
 
 import java.io.IOException;
 import java.util.ArrayList;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -30,12 +29,7 @@ public class GamePlayController {
 	
 //counters for turns (max 13), players (max players.size()), and rolls (max 3)
 	private int turnCounter=0;
-	private int playerCounter=0;
 	private int rollCounter=0;
-	
-//boolean values for labels final/editable
-	//0=yahtzee, 1=ones, 2=twos, 3=threes, 4=fours, 5=fives, 6=sixes, 7=tok, 8=fok, 9=fh, 10=ss, 11=ls, 12=chance
-	private boolean[] finalLabels = {false, false, false, false, false, false, false, false, false, false, false, false, false};
 	
 	private int checkCount=0;
 	

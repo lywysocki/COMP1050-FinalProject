@@ -24,12 +24,6 @@ public class Hand extends Dice{
 		return value;
 	}
 	
-	@Override
-	public String toString() {
-		return String.format("D1: %s, D2: %s, D3: %s, D4: %s, D5: %s %n", a[0].getValue(), a[1].getValue(), a[2].getValue(), a[3].getValue(), a[4].getValue());
-	}
-	
-	
 	
 	/**
 	 * 
