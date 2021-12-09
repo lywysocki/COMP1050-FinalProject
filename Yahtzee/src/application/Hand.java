@@ -74,7 +74,7 @@ public class Hand extends Dice{
 	 */
 	public static boolean hasAmountOf(int[] values, int k) {
 		int count=0;
-		for (int n=1;n<6;n++) {
+		for (int n=1;n<=6;n++) {
 			for (int x=0;x<values.length;x++) {
 				if (values[x]==n) count++;
 			}
@@ -83,6 +83,7 @@ public class Hand extends Dice{
 		}
 		if (count>=k) return true;
 		else return false;
+		
 	}
 	
 	
