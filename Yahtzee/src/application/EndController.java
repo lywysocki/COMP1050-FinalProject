@@ -12,15 +12,23 @@ public class EndController {
     @FXML
     private Label winnerScore;
     
-    private ArrayList<Player> players;
 
-    
+    private static Player winner(ArrayList<Player> players) {
+    	Player winner=players.get(0);
+    	for (int i=0; i<players.size(); i++) {
+    		if(winner.getTotalScore()<players.get(i).getTotalScore()) winner=players.get(i);
+    	}
+    	return winner;
+    }
     
     
     protected void initData(ArrayList<Player> players) {
-    	this.players=players;
+    	winnerName.setText(winner(players).getName());
+    	winnerScore.setText(String.format("%d", winner(players).getTotalScore()));
     	
     }
+    
+    
     @FXML
     void playAgain(ActionEvent event) {
 
