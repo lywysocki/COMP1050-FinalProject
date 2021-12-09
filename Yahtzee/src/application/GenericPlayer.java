@@ -92,24 +92,25 @@ abstract public class GenericPlayer extends Hand {
 		lower[1]=total;
 	}
 	
-	public void setFullHouse() {
-		lower[2]=25;
+	public void setFullHouse(boolean has) {
+		if (has) lower[2]=25;
 	}
 	
-	public void setSmStraight() {
-		lower[3]= 30;
+	public void setSmStraight(boolean has) {
+		if (has) lower[3]= 30;
 	}
 	
-	public void setLgStraight() {
-		lower[4]=40;
+	public void setLgStraight(boolean has) {
+		if (has) lower[4]=40;
 	}
 	
 	public void setChance(int total) {
 		lower[5]=total;
 	}
 	
-	public void setYahtzee() {
-		lower[6]=50;
+	public void setYahtzee(boolean has) {
+		if(has) lower[6]=50;
+		
 	}
 	
 

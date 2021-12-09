@@ -362,7 +362,8 @@ public class GamePlayController {
      * @param event
      */
     void chooseFH(ActionEvent event) {
-    	players.get(currentPlayer).setFullHouse();
+    	if(fh.getText().equals("0")) players.get(currentPlayer).setFullHouse(false);
+    	else players.get(currentPlayer).setFullHouse(true);
     	players.get(currentPlayer).fhFinal=true;
     }
 
@@ -402,7 +403,8 @@ public class GamePlayController {
      * @param event
      */
     void chooseLgStraight(ActionEvent event) {
-    	players.get(currentPlayer).setLgStraight();
+    	if(lgStraight.getText().equals("0")) players.get(currentPlayer).setLgStraight(false);
+    	else players.get(currentPlayer).setLgStraight(true);
     	players.get(currentPlayer).lsFinal=true;
     }
 
@@ -432,7 +434,8 @@ public class GamePlayController {
      * @param event
      */
     void chooseSmStraight(ActionEvent event) {
-    	players.get(currentPlayer).setSmStraight();
+    	if (smStraight.getText().equals("0")) players.get(currentPlayer).setSmStraight(false);
+    	else players.get(currentPlayer).setSmStraight(true);
     	players.get(currentPlayer).ssFinal=true;
     }
 
@@ -474,7 +477,9 @@ public class GamePlayController {
      * @param event
      */
     void chooseYahtzee(ActionEvent event) {
-    	players.get(currentPlayer).setYahtzee();
+    	if (yahtzee.getText().equals("0")) players.get(currentPlayer).setYahtzee(false);
+    	else players.get(currentPlayer).setYahtzee(true);
+    	
     	players.get(currentPlayer).yahtzeeFinal=true;
     }
     
@@ -533,8 +538,8 @@ public class GamePlayController {
         		
         		Scene endScene = new Scene(endView);
         		
-        		GamePlayController gController = loader.getController();
-        		gController.initData(players);
+        		EndController eController = loader.getController();
+        		eController.initData(players);
         		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         		window.setScene(endScene);
         		window.show();
