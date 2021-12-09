@@ -201,19 +201,25 @@ public class GamePlayController {
 			if(Hand.hasAmountOf(h.getHandValue(), 3) && !players.get(currentPlayer).tokFinal) {
 				tok.setText(String.format("%d", Hand.lowerScoreCalc(h.getHandValue())));
 			}
+			else if (!Hand.hasAmountOf(h.getHandValue(), 3) && !players.get(currentPlayer).tokFinal) {
+				yahtzee.setText("0");
+			}
 			if(Hand.hasAmountOf(h.getHandValue(), 4) && !players.get(currentPlayer).fokFinal) {
 				fok.setText(String.format("%d", Hand.lowerScoreCalc(h.getHandValue())));
-				
+			}
+			else if (!Hand.hasAmountOf(h.getHandValue(), 3) && !players.get(currentPlayer).fokFinal) {
+				yahtzee.setText("0");
+			}
 				
 				
 			//reset constant values if don't fit category
 			
 		//Yahtzee possible points
-			}
+			
 			if(Hand.hasAmountOf(h.getHandValue(), 5) && !players.get(currentPlayer).yahtzeeFinal) {
 				yahtzee.setText("50");
 			}
-			else if (!Hand.hasAmountOf(h.getHandValue(), 5)) {
+			else if (!Hand.hasAmountOf(h.getHandValue(), 5)&& !players.get(currentPlayer).yahtzeeFinal) {
 				yahtzee.setText("0");
 			}
 			
@@ -222,7 +228,7 @@ public class GamePlayController {
 			if(Hand.isFullHouse(h.getHandValue()) && !players.get(currentPlayer).fhFinal) {
 				fh.setText("25");
 			}
-			else if (!Hand.isFullHouse(h.getHandValue())) {
+			else if (!Hand.isFullHouse(h.getHandValue())&& !players.get(currentPlayer).fhFinal) {
 				fh.setText("0");
 			}
 			
@@ -449,6 +455,7 @@ public class GamePlayController {
     void toNextPlayer(ActionEvent event) {
     	
     	currentPlayer+=1;
+    	rollCounter=0;
     	
     	if(currentPlayer==players.size()) {
     		currentPlayer=0;
