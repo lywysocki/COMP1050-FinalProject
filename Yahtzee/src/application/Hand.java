@@ -90,7 +90,7 @@ public class Hand extends Dice{
 		}
 		else {			
 			while (i+1<values.length) {
-				count = (values[i+1]==values[i]) ? count+1:1;
+				count = (values[i+1]==values[i]) ? count+1:count;
 				if (count==k || count>k) {
 					isOfAKind=true;
 					return isOfAKind;
