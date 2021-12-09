@@ -13,6 +13,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
@@ -35,7 +36,8 @@ public class GamePlayController {
 //boolean values for labels final/editable
 	//0=yahtzee, 1=ones, 2=twos, 3=threes, 4=fours, 5=fives, 6=sixes, 7=tok, 8=fok, 9=fh, 10=ss, 11=ls, 12=chance
 	private boolean[] finalLabels = {false, false, false, false, false, false, false, false, false, false, false, false, false};
-
+	
+	private int checkCount=0;
 	
 
     @FXML
@@ -49,7 +51,8 @@ public class GamePlayController {
     @FXML
     private CheckBox check5;
     
-    
+    @FXML
+    private Button nextButton;
     
     
     
@@ -359,7 +362,17 @@ public class GamePlayController {
     		h.a[4].setKeep(false);
     	}
     }
-
+    void errorCheck() {
+    	Alert errorAlert = new Alert(AlertType.ERROR);
+		errorAlert.setHeaderText("Cheater detected >:(");
+		errorAlert.setContentText("ONLY CHECK ONE BOX!!!!");
+		errorAlert.showAndWait();
+    }
+    
+    void checkBoxNext() {
+    	checkCount++;
+    	nextButton.setVisible(true);
+    }
 
     @FXML
     /**
@@ -367,8 +380,11 @@ public class GamePlayController {
      * @param event
      */
     void chooseChance(ActionEvent event) {
-    	players.get(currentPlayer).setChance(Main.intStringToInt(chance.getText()));
-    	players.get(currentPlayer).chanceFinal=true;
+    	if (checkCount == 0) {
+    		players.get(currentPlayer).setChance(Main.intStringToInt(chance.getText()));
+        	players.get(currentPlayer).chanceFinal=true;
+        	checkBoxNext();
+    	}
     }
 
     @FXML
@@ -377,9 +393,12 @@ public class GamePlayController {
      * @param event
      */
     void chooseFH(ActionEvent event) {
-    	if(fh.getText().equals("0")) players.get(currentPlayer).setFullHouse(false);
-    	else players.get(currentPlayer).setFullHouse(true);
-    	players.get(currentPlayer).fhFinal=true;
+    	if (checkCount == 0) {
+    		if(fh.getText().equals("0")) players.get(currentPlayer).setFullHouse(false);
+        	else players.get(currentPlayer).setFullHouse(true);
+        	players.get(currentPlayer).fhFinal=true;
+        	checkBoxNext();
+    	} else errorCheck();
     }
 
     @FXML
@@ -388,8 +407,11 @@ public class GamePlayController {
      * @param event
      */
     void chooseFive(ActionEvent event) {
-    	players.get(currentPlayer).setFives(Main.intStringToInt(fives.getText()));
-    	players.get(currentPlayer).fivesFinal=true;
+    	if (checkCount == 0) {
+    		players.get(currentPlayer).setFives(Main.intStringToInt(fives.getText()));
+        	players.get(currentPlayer).fivesFinal=true;
+        	checkBoxNext();
+    	} else errorCheck();
     }
 
     @FXML
@@ -398,8 +420,11 @@ public class GamePlayController {
      * @param event
      */
     void chooseFoK(ActionEvent event) {
-    	players.get(currentPlayer).setFourOfAKind(Main.intStringToInt(fok.getText()));
-    	players.get(currentPlayer).fokFinal=true;
+    	if (checkCount == 0) {
+    		players.get(currentPlayer).setFourOfAKind(Main.intStringToInt(fok.getText()));
+        	players.get(currentPlayer).fokFinal=true;
+        	checkBoxNext();
+    	} else errorCheck();
     }
 
     @FXML
@@ -408,8 +433,11 @@ public class GamePlayController {
      * @param event
      */
     void chooseFour(ActionEvent event) {
-    	players.get(currentPlayer).setFours(Main.intStringToInt(fours.getText()));
-    	players.get(currentPlayer).foursFinal=true;
+    	if (checkCount == 0) {
+    		players.get(currentPlayer).setFours(Main.intStringToInt(fours.getText()));
+        	players.get(currentPlayer).foursFinal=true;
+        	checkBoxNext();
+    	}
     }
 
     @FXML
@@ -418,9 +446,12 @@ public class GamePlayController {
      * @param event
      */
     void chooseLgStraight(ActionEvent event) {
-    	if(lgStraight.getText().equals("0")) players.get(currentPlayer).setLgStraight(false);
-    	else players.get(currentPlayer).setLgStraight(true);
-    	players.get(currentPlayer).lsFinal=true;
+    	if (checkCount == 0) {
+    		if(lgStraight.getText().equals("0")) players.get(currentPlayer).setLgStraight(false);
+        	else players.get(currentPlayer).setLgStraight(true);
+        	players.get(currentPlayer).lsFinal=true;
+        	checkBoxNext();
+    	} else errorCheck();
     }
 
     @FXML
@@ -429,8 +460,11 @@ public class GamePlayController {
      * @param event
      */
     void chooseOne(ActionEvent event) {
-    	players.get(currentPlayer).setOnes(Main.intStringToInt(ones.getText()));
-    	players.get(currentPlayer).onesFinal=true;
+    	if (checkCount == 0) {
+    		players.get(currentPlayer).setOnes(Main.intStringToInt(ones.getText()));
+        	players.get(currentPlayer).onesFinal=true;
+        	checkBoxNext();
+    	} else errorCheck();
     }
 
     @FXML
@@ -439,8 +473,11 @@ public class GamePlayController {
      * @param event
      */
     void chooseSix(ActionEvent event) {
-    	players.get(currentPlayer).setSixes(Main.intStringToInt(sixes.getText()));
-    	players.get(currentPlayer).sixesFinal=true;
+    	if (checkCount == 0) {
+    		players.get(currentPlayer).setSixes(Main.intStringToInt(sixes.getText()));
+        	players.get(currentPlayer).sixesFinal=true;
+        	checkBoxNext();
+    	} else errorCheck();
     }
 
     @FXML
@@ -449,10 +486,13 @@ public class GamePlayController {
      * @param event
      */
     void chooseSmStraight(ActionEvent event) {
-    	if (smStraight.getText().equals("0")) players.get(currentPlayer).setSmStraight(false);
-    	else players.get(currentPlayer).setSmStraight(true);
-    	players.get(currentPlayer).ssFinal=true;
-    }
+    	if (checkCount == 0) {
+    		if (smStraight.getText().equals("0")) players.get(currentPlayer).setSmStraight(false);
+        	else players.get(currentPlayer).setSmStraight(true);
+        	players.get(currentPlayer).ssFinal=true;
+        	checkBoxNext();
+        	} else errorCheck();
+    	}
 
     @FXML
     /**
@@ -460,8 +500,11 @@ public class GamePlayController {
      * @param event
      */
     void chooseThree(ActionEvent event) {
-    	players.get(currentPlayer).setThrees(Main.intStringToInt(threes.getText()));
-    	players.get(currentPlayer).threesFinal=true;
+    	if (checkCount == 0) {
+    		players.get(currentPlayer).setThrees(Main.intStringToInt(threes.getText()));
+        	players.get(currentPlayer).threesFinal=true;
+        	checkBoxNext();
+    	} else errorCheck();
     }
 
     @FXML
@@ -470,8 +513,11 @@ public class GamePlayController {
      * @param event
      */
     void chooseToK(ActionEvent event) {
-    	players.get(currentPlayer).setThreeOfAKind(Main.intStringToInt(tok.getText()));
-    	players.get(currentPlayer).tokFinal=true;
+    	if (checkCount == 0) {
+    		players.get(currentPlayer).setThreeOfAKind(Main.intStringToInt(tok.getText()));
+        	players.get(currentPlayer).tokFinal=true;
+        	checkBoxNext();
+    	} else errorCheck();
     }
 
     @FXML
@@ -481,8 +527,11 @@ public class GamePlayController {
      * @param event
      */
     void chooseTwo(ActionEvent event) {
-    	players.get(currentPlayer).setTwos(Main.intStringToInt(twos.getText()));
-    	players.get(currentPlayer).twosFinal=true;
+    	if (checkCount == 0) {
+    		players.get(currentPlayer).setTwos(Main.intStringToInt(twos.getText()));
+        	players.get(currentPlayer).twosFinal=true;
+        	checkBoxNext();
+    	} else errorCheck();
     	
     }
 
@@ -492,10 +541,13 @@ public class GamePlayController {
      * @param event
      */
     void chooseYahtzee(ActionEvent event) {
-    	if (yahtzee.getText().equals("0")) players.get(currentPlayer).setYahtzee(false);
-    	else players.get(currentPlayer).setYahtzee(true);
-    	
-    	players.get(currentPlayer).yahtzeeFinal=true;
+    	if (checkCount == 0) {
+    		if (yahtzee.getText().equals("0")) players.get(currentPlayer).setYahtzee(false);
+        	else players.get(currentPlayer).setYahtzee(true);
+        	
+        	players.get(currentPlayer).yahtzeeFinal=true;
+        	checkBoxNext();
+    	} else errorCheck();
     }
     
     
@@ -601,11 +653,8 @@ public class GamePlayController {
     	
     	Roll();
     	
-    	players.get(currentPlayer).turnCounter++;
-    	
-    	if(players.get(players.size()-1).turnCounter == 13) {
-    		
-    	}
+    	nextButton.setVisible(false);
+    	checkCount = 0;
     
     }
 }

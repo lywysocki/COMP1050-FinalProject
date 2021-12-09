@@ -53,7 +53,7 @@
                         <CheckBox fx:id="check3" layoutX="277.0" layoutY="272.0" mnemonicParsing="false" onAction="#Keep3" text="Keep" textFill="WHITE" />
                         <CheckBox fx:id="check4" layoutX="397.0" layoutY="272.0" mnemonicParsing="false" onAction="#Keep4" text="Keep" textFill="WHITE" />
                         <CheckBox fx:id="check5" layoutX="506.0" layoutY="272.0" mnemonicParsing="false" onAction="#Keep5" text="Keep" textFill="WHITE" />
-                        <Button layoutX="263.0" layoutY="387.0" mnemonicParsing="false" onAction="#toNextPlayer" prefHeight="25.0" prefWidth="76.0" text="Next" />
+                        <Button fx:id="nextButton" layoutX="263.0" layoutY="387.0" visible="false" mnemonicParsing="false" onAction="#toNextPlayer" prefHeight="25.0" prefWidth="76.0" text="Next" />
                      </children>
                   </AnchorPane>
               </items>
