@@ -29,6 +29,7 @@ public class GamePlayController {
 	
 //counters for turns (max 13), players (max players.size()), and rolls (max 3)
 	private int turnCounter=0;
+	private int playerCounter=0;
 	private int rollCounter=0;
 	
 //boolean values for labels final/editable
@@ -580,6 +581,11 @@ public class GamePlayController {
     	
     	Roll();
     	
+    	players.get(currentPlayer).turnCounter++;
+    	
+    	if(players.get(players.size()-1).turnCounter == 13) {
+    		
+    	}
     
     }
 }
