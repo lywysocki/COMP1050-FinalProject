@@ -71,6 +71,32 @@ public class GamePlayController {
     @FXML
     private GridPane scorecard;
     
+    @FXML
+    private CheckBox onesCheck;
+    @FXML
+    private CheckBox twosCheck;
+    @FXML
+    private CheckBox threesCheck;
+    @FXML
+    private CheckBox foursCheck;
+    @FXML
+    private CheckBox fivesCheck;
+    @FXML
+    private CheckBox sixesCheck;
+    @FXML
+    private CheckBox tokCheck;
+    @FXML
+    private CheckBox fokCheck;
+    @FXML
+    private CheckBox fhCheck;
+    @FXML
+    private CheckBox smStraightCheck;
+    @FXML
+    private CheckBox lgStraightCheck;
+    @FXML
+    private CheckBox chanceCheck;
+    @FXML
+    private CheckBox yahtzeeCheck;
 
     @FXML
     private Label ones=new Label("0");
