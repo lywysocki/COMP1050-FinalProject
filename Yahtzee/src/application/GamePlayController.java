@@ -1,9 +1,14 @@
 package application;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
@@ -12,6 +17,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
 public class GamePlayController {
 
@@ -19,11 +25,10 @@ public class GamePlayController {
 	//VARIABLE INITIALIZATION
 	
 	private ArrayList<Player> players;
-	private int currentPlayer=0;
+	private int currentPlayer=0;//acts as playerCounter
 	
 //counters for turns (max 13), players (max players.size()), and rolls (max 3)
 	private int turnCounter=0;
-	private int playerCounter=0;
 	private int rollCounter=0;
 	
 //boolean values for labels final/editable
@@ -510,14 +515,29 @@ public class GamePlayController {
      * ex: change name, clear scorecard, add final labels from new current player to scorecard, reset die
      * 
      * @param event
+     * @throws IOException 
      */
-    void toNextPlayer(ActionEvent event) {
+    void toNextPlayer(ActionEvent event) throws IOException {
     	
     	currentPlayer+=1;
     	rollCounter=0;
     	
     	if(currentPlayer==players.size()) {
     		currentPlayer=0;
+    		turnCounter+=1;
+    		if (turnCounter>13) {
+    			FXMLLoader loader = new FXMLLoader();
+        		loader.setLocation(getClass().getResource("End.fxml"));
+        		Parent endView= loader.load();
+        		
+        		Scene endScene = new Scene(endView);
+        		
+        		GamePlayController gController = loader.getController();
+        		gController.initData(players);
+        		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        		window.setScene(endScene);
+        		window.show();
+    		}
     	} 
     	colorChecker(players.get(currentPlayer));
     	name.setText(players.get(currentPlayer).getName());
