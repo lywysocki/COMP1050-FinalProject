@@ -19,7 +19,6 @@ public class GamePlayController {
 	//VARIABLE INITIALIZATION
 	
 	private ArrayList<Player> players;
-	private ArrayList<String> names;
 	private int currentPlayer=0;
 	
 //counters for turns (max 13), players (max players.size()), and rolls (max 3)
@@ -239,7 +238,7 @@ public class GamePlayController {
 			if(Hand.isSmallStraight(h.getHandValue()) && !players.get(currentPlayer).ssFinal) {
 				smStraight.setText("30");
 			}
-			else if (!Hand.isSmallStraight(h.getHandValue())) {
+			else if (!Hand.isSmallStraight(h.getHandValue())&& !players.get(currentPlayer).ssFinal) {
 				smStraight.setText("0");
 			}
 			
@@ -248,7 +247,7 @@ public class GamePlayController {
 			if(Hand.isLargeStraight(h.getHandValue()) && !players.get(currentPlayer).lsFinal) {
 				lgStraight.setText("40");
 			}
-			else if (!Hand.isLargeStraight(h.getHandValue())) {
+			else if (!Hand.isLargeStraight(h.getHandValue())&& !players.get(currentPlayer).lsFinal) {
 				lgStraight.setText("0");
 			}
 			
