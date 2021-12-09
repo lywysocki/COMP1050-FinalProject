@@ -207,7 +207,7 @@ public class GamePlayController {
 			if(Hand.hasAmountOf(h.getHandValue(), 4) && !players.get(currentPlayer).fokFinal) {
 				fok.setText(String.format("%d", Hand.lowerScoreCalc(h.getHandValue())));
 			}
-			else if (!Hand.hasAmountOf(h.getHandValue(), 3) && !players.get(currentPlayer).fokFinal) {
+			else if (!Hand.hasAmountOf(h.getHandValue(), 4) && !players.get(currentPlayer).fokFinal) {
 				yahtzee.setText("0");
 			}
 				
