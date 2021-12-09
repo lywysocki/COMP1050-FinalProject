@@ -17,7 +17,6 @@ import javafx.stage.Stage;
 public class LaunchController {
 	
 	public int amtHum;
-	public int amtAI;
 	public int amtTotal;
 	public ArrayList<String> playerNameStrings= new ArrayList<String>();
 	public ArrayList<Label> playerNameLabels= new ArrayList<Label>();
