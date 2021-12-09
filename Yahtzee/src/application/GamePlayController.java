@@ -433,7 +433,7 @@ public class GamePlayController {
     		players.get(currentPlayer).setFours(Main.intStringToInt(fours.getText()));
         	players.get(currentPlayer).foursFinal=true;
         	checkBoxNext();
-    	}
+    	} else errorCheck();
     }
 
     @FXML
