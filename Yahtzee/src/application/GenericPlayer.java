@@ -104,5 +104,5 @@ abstract public class GenericPlayer extends Hand {
 	
 	
 	public abstract boolean isRolling();
-
+ 
 }
