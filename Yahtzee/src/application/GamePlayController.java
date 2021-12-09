@@ -438,6 +438,20 @@ public class GamePlayController {
     	} 
     	
     	name.setText(players.get(currentPlayer).getName());
+    	ones.setText(String.format("%d", players.get(currentPlayer).upper[0]));
+    	twos.setText(String.format("%d", players.get(currentPlayer).upper[1]));
+    	threes.setText(String.format("%d", players.get(currentPlayer).upper[2]));
+    	fours.setText(String.format("%d", players.get(currentPlayer).upper[3]));
+    	fives.setText(String.format("%d", players.get(currentPlayer).upper[4]));
+    	sixes.setText(String.format("%d", players.get(currentPlayer).upper[5]));
+    	tok.setText(String.format("%d", players.get(currentPlayer).lower[0]));
+    	fok.setText(String.format("%d", players.get(currentPlayer).lower[1]));
+    	fh.setText(String.format("%d", players.get(currentPlayer).lower[2]));
+    	smStraight.setText(String.format("%d", players.get(currentPlayer).lower[3]));
+    	lgStraight.setText(String.format("%d", players.get(currentPlayer).lower[4]));
+    	chance.setText(String.format("%d", players.get(currentPlayer).lower[5]));
+    	yahtzee.setText(String.format("%d", players.get(currentPlayer).lower[6]));
+    	
+    
     }
-
 }
