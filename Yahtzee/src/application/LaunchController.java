@@ -26,18 +26,16 @@ public class LaunchController {
 	@FXML
 	private TextField humPlayers;
 	
-	@FXML
-	private TextField AIPlayers;
 	
 	/**
 	 * Tests if a string can be converted into an int
 	 * @param s
 	 * @return boolean, true if string is an int
 	 */
-	public static boolean isInt(String hum, String ai) {
+	public static boolean isInt(String hum) {
 		try {
 			Main.intStringToInt(hum);
-			Main.intStringToInt(ai);
+
 		}
 		catch(NumberFormatException e) {
 			Alert errorAlert = new Alert(AlertType.ERROR);
@@ -52,15 +50,12 @@ public class LaunchController {
 	
 	public void createGameScenes(ActionEvent event) throws IOException {
 	
-		if(isInt(humPlayers.getText(), AIPlayers.getText())==false) {
+		if(isInt(humPlayers.getText())==false) {
 			humPlayers.deleteText(0, humPlayers.getText().length());
-			AIPlayers.deleteText(0, AIPlayers.getText().length());
 			
 		}
 		else {
 			amtHum = Main.intStringToInt(humPlayers.getText());
-			amtAI = Main.intStringToInt(AIPlayers.getText());
-			amtTotal=amtHum+amtAI;
 			for(int i=0; i<amtHum; i++) {
 				humPlayersList.add(new Player());
 			}
