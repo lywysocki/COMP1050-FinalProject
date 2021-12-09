@@ -1,7 +1,8 @@
 package application;
 
 public class Player extends GenericPlayer{
-
+	
+	
 	public Player() {
 		super();
 	}
@@ -23,5 +24,7 @@ public class Player extends GenericPlayer{
 	public String getName() {
 		return super.name;
 	}
+	
+	
 
 }

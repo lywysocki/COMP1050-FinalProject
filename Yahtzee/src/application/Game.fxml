@@ -264,8 +264,8 @@
                   <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#chooseFH" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="13" />
                   <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#chooseSmStraight" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="14" />
                   <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#chooseLgStraight" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="15" />
-                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#chooseYahtzee" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="16" />
-                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#chooseChance" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="17" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#chooseChance" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+                  <CheckBox alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#chooseYahtzee" prefHeight="26.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="17" />
                   <Label fx:id="name" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="10.0" layoutY="33.0" prefHeight="135.0" prefWidth="209.0" textAlignment="CENTER" GridPane.columnSpan="3">
                      <font>
                         <Font name="Candara Bold" size="15.0" />

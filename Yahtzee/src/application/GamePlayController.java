@@ -4,8 +4,10 @@ import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
@@ -17,7 +19,16 @@ public class GamePlayController {
 	
 	private ArrayList<Player> players;
 	private ArrayList<String> names;
-	private Player currentPlayer;
+	private int currentPlayer=0;
+	
+//counters for turns (max 13), players (max players.size()), and rolls (max 3)
+	private int turnCounter=0;
+	private int playerCounter=0;
+	private int rollCounter=0;
+	
+//boolean values for labels final/editable
+	//0=yahtzee, 1=ones, 2=twos, 3=threes, 4=fours, 5=fives, 6=sixes, 7=tok, 8=fok, 9=fh, 10=ss, 11=ls, 12=chance
+	private boolean[] finalLabels = {false, false, false, false, false, false, false, false, false, false, false, false, false};
 	private boolean onesFinal=false;
 	private boolean twosFinal=false;
 	private boolean threesFinal=false;
@@ -43,7 +54,6 @@ public class GamePlayController {
     private CheckBox check4;
     @FXML
     private CheckBox check5;
-    
     
     
     @FXML
@@ -116,8 +126,7 @@ public class GamePlayController {
      */
     public void initData(ArrayList<Player> players) {
     	this.players=players;
-    	currentPlayer=players.get(0);
-    	name.setText(currentPlayer.getName());
+    	name.setText(players.get(currentPlayer).getName());
     	
     }
     
@@ -133,88 +142,102 @@ public class GamePlayController {
      * @param event
      */
     void Roll(ActionEvent event) {
-    	ImageView[] d = {d1,d2,d3,d4,d5};
-		for(int i=0; i<d.length; i++) {
-			if (h.a[i].isKept()==false) {
-				h.a[i].roll();
-				d[i].setImage(new Image(getClass().getResource(h.a[i].getImage()).toExternalForm()));
+    	
+    	if(rollCounter<3) {
+	    	ImageView[] d = {d1,d2,d3,d4,d5};
+			for(int i=0; i<d.length; i++) {
+				if (h.a[i].isKept()==false) {
+					h.a[i].roll();
+					d[i].setImage(new Image(getClass().getResource(h.a[i].getImage()).toExternalForm()));
+				}
+				
 			}
 			
-		}
-		
-		//set upper labels based on if theyre final or not
-		
-		if(!onesFinal) {
-			ones.setText(String.format("%d", Hand.upperScoreCalc(1, h.getHandValue())));
-		}
-		if(!twosFinal) {
-			twos.setText(String.format("%d", Hand.upperScoreCalc(2, h.getHandValue())));
-		}
-		if(!threesFinal) {
-			threes.setText(String.format("%d", Hand.upperScoreCalc(3, h.getHandValue())));
-		}
-		if(!foursFinal) {
-			fours.setText(String.format("%d", Hand.upperScoreCalc(4, h.getHandValue())));
-		}
-		if(!fivesFinal) {
-			fives.setText(String.format("%d", Hand.upperScoreCalc(5, h.getHandValue())));
-		}
-		if(!sixesFinal) {
-			sixes.setText(String.format("%d", Hand.upperScoreCalc(6, h.getHandValue())));
-		}
-		if(!chanceFinal) {
-			chance.setText(String.format("%d", Hand.lowerScoreCalc(h.getHandValue())));
-		}
-		
-		
-		
-		//set lower labels based on if they fit the category and arent final
-		
-		if(Hand.hasAmountOf(h.getHandValue(), 3) && !tokFinal) {
-			tok.setText(String.format("%d", Hand.lowerScoreCalc(h.getHandValue())));
-		}
-		if(Hand.hasAmountOf(h.getHandValue(), 4) && !fokFinal) {
-			fok.setText(String.format("%d", Hand.lowerScoreCalc(h.getHandValue())));
+			//set upper labels based on if they're final or not
+			
+			if(!onesFinal) {
+				ones.setText(String.format("%d", Hand.upperScoreCalc(1, h.getHandValue())));
+			}
+			if(!twosFinal) {
+				twos.setText(String.format("%d", Hand.upperScoreCalc(2, h.getHandValue())));
+			}
+			if(!threesFinal) {
+				threes.setText(String.format("%d", Hand.upperScoreCalc(3, h.getHandValue())));
+			}
+			if(!foursFinal) {
+				fours.setText(String.format("%d", Hand.upperScoreCalc(4, h.getHandValue())));
+			}
+			if(!fivesFinal) {
+				fives.setText(String.format("%d", Hand.upperScoreCalc(5, h.getHandValue())));
+			}
+			if(!sixesFinal) {
+				sixes.setText(String.format("%d", Hand.upperScoreCalc(6, h.getHandValue())));
+			}
+			if(!chanceFinal) {
+				chance.setText(String.format("%d", Hand.lowerScoreCalc(h.getHandValue())));
+			}
 			
 			
 			
-		//reset constant values if dont fit category
+			//set lower labels based on if they fit the category and arent final
 			
-		}
-		if(Hand.hasAmountOf(h.getHandValue(), 5) && !yahtzeeFinal) {
-			yahtzee.setVisible(true);
-		}
-		else if (!Hand.hasAmountOf(h.getHandValue(), 5)) {
-			yahtzee.setVisible(false);
-		}
+			if(Hand.hasAmountOf(h.getHandValue(), 3) && !tokFinal) {
+				tok.setText(String.format("%d", Hand.lowerScoreCalc(h.getHandValue())));
+			}
+			if(Hand.hasAmountOf(h.getHandValue(), 4) && !fokFinal) {
+				fok.setText(String.format("%d", Hand.lowerScoreCalc(h.getHandValue())));
+				
+				
+				
+			//reset constant values if don't fit category
+			
+		//Yahtzee possible points
+			}
+			if(Hand.hasAmountOf(h.getHandValue(), 5) && !yahtzeeFinal) {
+				yahtzee.setVisible(true);
+			}
+			else if (!Hand.hasAmountOf(h.getHandValue(), 5)) {
+				yahtzee.setVisible(false);
+			}
+			
+			
+		//Full House possible points
+			if(Hand.isFullHouse(h.getHandValue()) && !fhFinal) {
+				fh.setVisible(true);
+			}
+			else if (!Hand.isFullHouse(h.getHandValue())) {
+				fh.setVisible(false);
+			}
+			
+			
+		//Small Straight possible points
+			if(Hand.isSmallStraight(h.getHandValue()) && !ssFinal) {
+				smStraight.setVisible(true);
+			}
+			else if (!Hand.isSmallStraight(h.getHandValue())) {
+				smStraight.setVisible(false);
+			}
+			
+			
+		//Large Straight possible points
+			if(Hand.isLargeStraight(h.getHandValue()) && !lsFinal) {
+				lgStraight.setVisible(true);
+			}
+			else if (!Hand.isLargeStraight(h.getHandValue())) {
+				lgStraight.setVisible(false);
+			}
+			
+			rollCounter+=1;
+			
+    	} else {
+    		Alert errorAlert = new Alert(AlertType.ERROR);
+			errorAlert.setHeaderText("You only get three rolls per turn.");
+			errorAlert.setContentText("Please choose a category to add a score to.");
+			errorAlert.showAndWait();
+    	}
 		
-		
-		if(Hand.isFullHouse(h.getHandValue()) && !fhFinal) {
-			fh.setVisible(true);
-		}
-		else if (!Hand.isFullHouse(h.getHandValue())) {
-			fh.setVisible(false);
-		}
-		
-		
-		if(Hand.isSmallStraight(h.getHandValue()) && !ssFinal) {
-			smStraight.setVisible(true);
-		}
-		else if (!Hand.isSmallStraight(h.getHandValue())) {
-			smStraight.setVisible(false);
-		}
-		
-		
-		if(Hand.isLargeStraight(h.getHandValue()) && !lsFinal) {
-			lgStraight.setVisible(true);
-		}
-		else if (!Hand.isLargeStraight(h.getHandValue())) {
-			lgStraight.setVisible(false);
-		}
-		
-		
-		
-    }
+    }//end roll method
+    
     
     
     @FXML
@@ -274,7 +297,8 @@ public class GamePlayController {
      * @param event
      */
     void chooseChance(ActionEvent event) {
-    	
+    	players.get(currentPlayer).setChance(Main.intStringToInt(chance.getText()));
+    	chanceFinal=true;
     }
 
     @FXML
@@ -283,7 +307,8 @@ public class GamePlayController {
      * @param event
      */
     void chooseFH(ActionEvent event) {
-
+    	players.get(currentPlayer).setFullHouse();
+    	fhFinal=true;
     }
 
     @FXML
@@ -292,7 +317,8 @@ public class GamePlayController {
      * @param event
      */
     void chooseFive(ActionEvent event) {
-
+    	players.get(currentPlayer).setFives(Main.intStringToInt(fives.getText()));
+    	fivesFinal=true;
     }
 
     @FXML
@@ -301,7 +327,8 @@ public class GamePlayController {
      * @param event
      */
     void chooseFoK(ActionEvent event) {
-
+    	players.get(currentPlayer).setFourOfAKind(Main.intStringToInt(fok.getText()));
+    	fokFinal=true;
     }
 
     @FXML
@@ -310,7 +337,8 @@ public class GamePlayController {
      * @param event
      */
     void chooseFour(ActionEvent event) {
-
+    	players.get(currentPlayer).setFours(Main.intStringToInt(fours.getText()));
+    	foursFinal=true;
     }
 
     @FXML
@@ -319,7 +347,8 @@ public class GamePlayController {
      * @param event
      */
     void chooseLgStraight(ActionEvent event) {
-
+    	players.get(currentPlayer).setLgStraight();
+    	lsFinal=true;
     }
 
     @FXML
@@ -328,7 +357,8 @@ public class GamePlayController {
      * @param event
      */
     void chooseOne(ActionEvent event) {
-
+    	players.get(currentPlayer).setOnes(Main.intStringToInt(ones.getText()));
+    	onesFinal=true;
     }
 
     @FXML
@@ -337,7 +367,8 @@ public class GamePlayController {
      * @param event
      */
     void chooseSix(ActionEvent event) {
-
+    	players.get(currentPlayer).setSixes(Main.intStringToInt(sixes.getText()));
+    	sixesFinal=true;
     }
 
     @FXML
@@ -346,7 +377,8 @@ public class GamePlayController {
      * @param event
      */
     void chooseSmStraight(ActionEvent event) {
-
+    	players.get(currentPlayer).setSmStraight();
+    	ssFinal=true;
     }
 
     @FXML
@@ -355,7 +387,8 @@ public class GamePlayController {
      * @param event
      */
     void chooseThree(ActionEvent event) {
-
+    	players.get(currentPlayer).setThrees(Main.intStringToInt(threes.getText()));
+    	threesFinal=true;
     }
 
     @FXML
@@ -364,7 +397,8 @@ public class GamePlayController {
      * @param event
      */
     void chooseToK(ActionEvent event) {
-
+    	players.get(currentPlayer).setThreeOfAKind(Main.intStringToInt(tok.getText()));
+    	tokFinal=true;
     }
 
     @FXML
@@ -374,7 +408,8 @@ public class GamePlayController {
      * @param event
      */
     void chooseTwo(ActionEvent event) {
-
+    	players.get(currentPlayer).setTwos(Main.intStringToInt(twos.getText()));
+    	twosFinal=true;
     }
 
     @FXML
@@ -383,7 +418,8 @@ public class GamePlayController {
      * @param event
      */
     void chooseYahtzee(ActionEvent event) {
-
+    	players.get(currentPlayer).setYahtzee();
+    	yahtzeeFinal=true;
     }
 
     @FXML
@@ -394,7 +430,14 @@ public class GamePlayController {
      * @param event
      */
     void toNextPlayer(ActionEvent event) {
-
+    	
+    	currentPlayer+=1;
+    	
+    	if(currentPlayer==players.size()) {
+    		currentPlayer=0;
+    	} 
+    	
+    	name.setText(players.get(currentPlayer).getName());
     }
 
 }

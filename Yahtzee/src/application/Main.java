@@ -32,6 +32,22 @@ import javafx.scene.web.WebView;
 
 public class Main extends Application {
 
+	
+
+/**
+ * Converts a string assumed to be an int into an int
+ * 
+ * @param s element of argument array
+ * @return value double variable after conversion
+ * @throws NumberFormatException thrown if the string is not a double 
+ */
+public static int intStringToInt(String s) throws NumberFormatException{
+	Integer valueObject = Integer.parseInt(s);
+	int value = valueObject.intValue();
+	return value;
+}
+
+
 	@Override
 	public void start(Stage primaryStage) throws IOException {
 		Parent startParent = FXMLLoader.load(getClass().getResource("Start.fxml"));
@@ -43,5 +59,6 @@ public class Main extends Application {
 	public static void main(String[] args) {
 		launch(args);
 	}
+	
 	
 }
