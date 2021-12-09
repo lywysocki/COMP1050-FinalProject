@@ -29,19 +29,7 @@ public class GamePlayController {
 //boolean values for labels final/editable
 	//0=yahtzee, 1=ones, 2=twos, 3=threes, 4=fours, 5=fives, 6=sixes, 7=tok, 8=fok, 9=fh, 10=ss, 11=ls, 12=chance
 	private boolean[] finalLabels = {false, false, false, false, false, false, false, false, false, false, false, false, false};
-	private boolean onesFinal=false;
-	private boolean twosFinal=false;
-	private boolean threesFinal=false;
-	private boolean foursFinal=false;
-	private boolean fivesFinal=false;
-	private boolean sixesFinal=false;
-	private boolean tokFinal=false;
-	private boolean fokFinal=false;
-	private boolean fhFinal=false;
-	private boolean ssFinal=false;
-	private boolean lsFinal=false;
-	private boolean chanceFinal=false;
-	private boolean yahtzeeFinal=false;
+
 	
 
     @FXML
@@ -54,6 +42,9 @@ public class GamePlayController {
     private CheckBox check4;
     @FXML
     private CheckBox check5;
+    
+    
+    
     
     
     @FXML
@@ -155,25 +146,25 @@ public class GamePlayController {
 			
 			//set upper labels based on if they're final or not
 			
-			if(!onesFinal) {
+			if(!players.get(currentPlayer).onesFinal) {
 				ones.setText(String.format("%d", Hand.upperScoreCalc(1, h.getHandValue())));
 			}
-			if(!twosFinal) {
+			if(!players.get(currentPlayer).twosFinal) {
 				twos.setText(String.format("%d", Hand.upperScoreCalc(2, h.getHandValue())));
 			}
-			if(!threesFinal) {
+			if(!players.get(currentPlayer).threesFinal) {
 				threes.setText(String.format("%d", Hand.upperScoreCalc(3, h.getHandValue())));
 			}
-			if(!foursFinal) {
+			if(!players.get(currentPlayer).foursFinal) {
 				fours.setText(String.format("%d", Hand.upperScoreCalc(4, h.getHandValue())));
 			}
-			if(!fivesFinal) {
+			if(!players.get(currentPlayer).fivesFinal) {
 				fives.setText(String.format("%d", Hand.upperScoreCalc(5, h.getHandValue())));
 			}
-			if(!sixesFinal) {
+			if(!players.get(currentPlayer).sixesFinal) {
 				sixes.setText(String.format("%d", Hand.upperScoreCalc(6, h.getHandValue())));
 			}
-			if(!chanceFinal) {
+			if(!players.get(currentPlayer).chanceFinal) {
 				chance.setText(String.format("%d", Hand.lowerScoreCalc(h.getHandValue())));
 			}
 			
@@ -181,10 +172,10 @@ public class GamePlayController {
 			
 			//set lower labels based on if they fit the category and arent final
 			
-			if(Hand.hasAmountOf(h.getHandValue(), 3) && !tokFinal) {
+			if(Hand.hasAmountOf(h.getHandValue(), 3) && !players.get(currentPlayer).tokFinal) {
 				tok.setText(String.format("%d", Hand.lowerScoreCalc(h.getHandValue())));
 			}
-			if(Hand.hasAmountOf(h.getHandValue(), 4) && !fokFinal) {
+			if(Hand.hasAmountOf(h.getHandValue(), 4) && !players.get(currentPlayer).fokFinal) {
 				fok.setText(String.format("%d", Hand.lowerScoreCalc(h.getHandValue())));
 				
 				
@@ -193,7 +184,7 @@ public class GamePlayController {
 			
 		//Yahtzee possible points
 			}
-			if(Hand.hasAmountOf(h.getHandValue(), 5) && !yahtzeeFinal) {
+			if(Hand.hasAmountOf(h.getHandValue(), 5) && !players.get(currentPlayer).yahtzeeFinal) {
 				yahtzee.setText("50");
 			}
 			else if (!Hand.hasAmountOf(h.getHandValue(), 5)) {
@@ -202,7 +193,7 @@ public class GamePlayController {
 			
 			
 		//Full House possible points
-			if(Hand.isFullHouse(h.getHandValue()) && !fhFinal) {
+			if(Hand.isFullHouse(h.getHandValue()) && !players.get(currentPlayer).fhFinal) {
 				fh.setText("25");
 			}
 			else if (!Hand.isFullHouse(h.getHandValue())) {
@@ -211,7 +202,7 @@ public class GamePlayController {
 			
 			
 		//Small Straight possible points
-			if(Hand.isSmallStraight(h.getHandValue()) && !ssFinal) {
+			if(Hand.isSmallStraight(h.getHandValue()) && !players.get(currentPlayer).ssFinal) {
 				smStraight.setText("30");
 			}
 			else if (!Hand.isSmallStraight(h.getHandValue())) {
@@ -220,7 +211,7 @@ public class GamePlayController {
 			
 			
 		//Large Straight possible points
-			if(Hand.isLargeStraight(h.getHandValue()) && !lsFinal) {
+			if(Hand.isLargeStraight(h.getHandValue()) && !players.get(currentPlayer).lsFinal) {
 				lgStraight.setText("40");
 			}
 			else if (!Hand.isLargeStraight(h.getHandValue())) {
@@ -298,7 +289,7 @@ public class GamePlayController {
      */
     void chooseChance(ActionEvent event) {
     	players.get(currentPlayer).setChance(Main.intStringToInt(chance.getText()));
-    	chanceFinal=true;
+    	players.get(currentPlayer).chanceFinal=true;
     }
 
     @FXML
@@ -308,7 +299,7 @@ public class GamePlayController {
      */
     void chooseFH(ActionEvent event) {
     	players.get(currentPlayer).setFullHouse();
-    	fhFinal=true;
+    	players.get(currentPlayer).fhFinal=true;
     }
 
     @FXML
@@ -318,7 +309,7 @@ public class GamePlayController {
      */
     void chooseFive(ActionEvent event) {
     	players.get(currentPlayer).setFives(Main.intStringToInt(fives.getText()));
-    	fivesFinal=true;
+    	players.get(currentPlayer).fivesFinal=true;
     }
 
     @FXML
@@ -328,7 +319,7 @@ public class GamePlayController {
      */
     void chooseFoK(ActionEvent event) {
     	players.get(currentPlayer).setFourOfAKind(Main.intStringToInt(fok.getText()));
-    	fokFinal=true;
+    	players.get(currentPlayer).fokFinal=true;
     }
 
     @FXML
@@ -338,7 +329,7 @@ public class GamePlayController {
      */
     void chooseFour(ActionEvent event) {
     	players.get(currentPlayer).setFours(Main.intStringToInt(fours.getText()));
-    	foursFinal=true;
+    	players.get(currentPlayer).foursFinal=true;
     }
 
     @FXML
@@ -348,7 +339,7 @@ public class GamePlayController {
      */
     void chooseLgStraight(ActionEvent event) {
     	players.get(currentPlayer).setLgStraight();
-    	lsFinal=true;
+    	players.get(currentPlayer).lsFinal=true;
     }
 
     @FXML
@@ -358,7 +349,7 @@ public class GamePlayController {
      */
     void chooseOne(ActionEvent event) {
     	players.get(currentPlayer).setOnes(Main.intStringToInt(ones.getText()));
-    	onesFinal=true;
+    	players.get(currentPlayer).onesFinal=true;
     }
 
     @FXML
@@ -368,7 +359,7 @@ public class GamePlayController {
      */
     void chooseSix(ActionEvent event) {
     	players.get(currentPlayer).setSixes(Main.intStringToInt(sixes.getText()));
-    	sixesFinal=true;
+    	players.get(currentPlayer).sixesFinal=true;
     }
 
     @FXML
@@ -378,7 +369,7 @@ public class GamePlayController {
      */
     void chooseSmStraight(ActionEvent event) {
     	players.get(currentPlayer).setSmStraight();
-    	ssFinal=true;
+    	players.get(currentPlayer).ssFinal=true;
     }
 
     @FXML
@@ -388,7 +379,7 @@ public class GamePlayController {
      */
     void chooseThree(ActionEvent event) {
     	players.get(currentPlayer).setThrees(Main.intStringToInt(threes.getText()));
-    	threesFinal=true;
+    	players.get(currentPlayer).threesFinal=true;
     }
 
     @FXML
@@ -398,7 +389,7 @@ public class GamePlayController {
      */
     void chooseToK(ActionEvent event) {
     	players.get(currentPlayer).setThreeOfAKind(Main.intStringToInt(tok.getText()));
-    	tokFinal=true;
+    	players.get(currentPlayer).tokFinal=true;
     }
 
     @FXML
@@ -409,7 +400,7 @@ public class GamePlayController {
      */
     void chooseTwo(ActionEvent event) {
     	players.get(currentPlayer).setTwos(Main.intStringToInt(twos.getText()));
-    	twosFinal=true;
+    	players.get(currentPlayer).twosFinal=true;
     }
 
     @FXML
@@ -419,7 +410,7 @@ public class GamePlayController {
      */
     void chooseYahtzee(ActionEvent event) {
     	players.get(currentPlayer).setYahtzee();
-    	yahtzeeFinal=true;
+    	players.get(currentPlayer).yahtzeeFinal=true;
     }
 
     @FXML
@@ -438,6 +429,8 @@ public class GamePlayController {
     	} 
     	
     	name.setText(players.get(currentPlayer).getName());
+    	
+    	
     	ones.setText(String.format("%d", players.get(currentPlayer).upper[0]));
     	twos.setText(String.format("%d", players.get(currentPlayer).upper[1]));
     	threes.setText(String.format("%d", players.get(currentPlayer).upper[2]));
@@ -451,6 +444,7 @@ public class GamePlayController {
     	lgStraight.setText(String.format("%d", players.get(currentPlayer).lower[4]));
     	chance.setText(String.format("%d", players.get(currentPlayer).lower[5]));
     	yahtzee.setText(String.format("%d", players.get(currentPlayer).lower[6]));
+    	
     	
     
     }

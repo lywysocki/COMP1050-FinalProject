@@ -7,11 +7,39 @@ abstract public class GenericPlayer extends Hand {
 	protected int[] upper = {0, 0, 0, 0, 0, 0};
 	protected int[] lower = {0, 0, 0, 0, 0, 0, 0};
 	
+	boolean onesFinal;
+	boolean twosFinal;
+	boolean threesFinal;
+	boolean foursFinal;
+	boolean fivesFinal;
+	boolean sixesFinal;
+	boolean tokFinal;
+	boolean fokFinal;
+	boolean fhFinal;
+	boolean ssFinal;
+	boolean lsFinal;
+	boolean chanceFinal;
+	boolean yahtzeeFinal;
+	
 	public GenericPlayer(String name) {
 		super();
 		
 		this.name = name;
 		doneRolling = false;
+		onesFinal=false;
+		twosFinal=false;
+		threesFinal=false;
+		foursFinal=false;
+		fivesFinal=false;
+		sixesFinal=false;
+		tokFinal=false;
+		fokFinal=false;
+		fhFinal=false;
+		ssFinal=false;
+		lsFinal=false;
+		chanceFinal=false;
+		yahtzeeFinal=false;
+		
 	}
 	
 	public int getTotalScore() {
