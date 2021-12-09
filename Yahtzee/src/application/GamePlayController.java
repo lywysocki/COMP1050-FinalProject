@@ -566,10 +566,11 @@ public class GamePlayController {
     	if (player.fhFinal==true) {
     		fh.setTextFill(Color.RED);
     		fhCheck.setVisible(false);
+    		
     	}
     	else {
     		fh.setTextFill(Color.BLACK);
-    		chanceCheck.setVisible(true);
+    		fhCheck.setVisible(true);
     	}
     	
     	
