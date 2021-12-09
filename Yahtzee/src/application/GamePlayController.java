@@ -11,6 +11,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 
 public class GamePlayController {
 
@@ -160,7 +161,7 @@ public class GamePlayController {
      * 
      * @param event
      */
-    void Roll(ActionEvent event) {
+    void Roll() {
     	
     	if(rollCounter<3) {
 	    	ImageView[] d = {d1,d2,d3,d4,d5};
@@ -459,6 +460,7 @@ public class GamePlayController {
     void chooseTwo(ActionEvent event) {
     	players.get(currentPlayer).setTwos(Main.intStringToInt(twos.getText()));
     	players.get(currentPlayer).twosFinal=true;
+    	
     }
 
     @FXML
@@ -470,7 +472,39 @@ public class GamePlayController {
     	players.get(currentPlayer).setYahtzee();
     	players.get(currentPlayer).yahtzeeFinal=true;
     }
-
+    
+    
+    void colorChecker(Player player) {
+    	if (player.chanceFinal==true) chance.setTextFill(Color.RED);
+    	else chance.setTextFill(Color.BLACK);
+    	if (player.fhFinal==true) fh.setTextFill(Color.RED);
+    	else fh.setTextFill(Color.BLACK);
+    	if (player.fivesFinal==true) fives.setTextFill(Color.RED);
+    	else fives.setTextFill(Color.BLACK);
+    	if (player.fokFinal==true) fok.setTextFill(Color.RED);
+    	else fok.setTextFill(Color.BLACK);
+    	if (player.foursFinal==true) fours.setTextFill(Color.RED);
+    	else fours.setTextFill(Color.BLACK);
+    	if (player.lsFinal==true) lgStraight.setTextFill(Color.RED);
+    	else lgStraight.setTextFill(Color.BLACK);
+    	if (player.onesFinal==true) ones.setTextFill(Color.RED);
+    	else ones.setTextFill(Color.BLACK);
+    	if (player.sixesFinal==true) sixes.setTextFill(Color.RED);
+    	else sixes.setTextFill(Color.BLACK);
+    	if (player.ssFinal==true) smStraight.setTextFill(Color.RED);
+    	else smStraight.setTextFill(Color.BLACK);
+    	if (player.threesFinal==true) threes.setTextFill(Color.RED);
+    	else threes.setTextFill(Color.BLACK);
+    	if (player.tokFinal==true) tok.setTextFill(Color.RED);
+    	else tok.setTextFill(Color.BLACK);
+    	if (player.twosFinal==true) twos.setTextFill(Color.RED);
+    	else twos.setTextFill(Color.BLACK);
+    	if (player.yahtzeeFinal==true) yahtzee.setTextFill(Color.RED);
+    	else yahtzee.setTextFill(Color.BLACK);
+    }
+    
+    
+    
     @FXML
     /**
      * clears all variable fields and sets them to a new current player
@@ -486,7 +520,7 @@ public class GamePlayController {
     	if(currentPlayer==players.size()) {
     		currentPlayer=0;
     	} 
-    	
+    	colorChecker(players.get(currentPlayer));
     	name.setText(players.get(currentPlayer).getName());
     	
     	
@@ -524,6 +558,9 @@ public class GamePlayController {
     	check3.setSelected(false); h.a[2].setKeep(false);
     	check4.setSelected(false); h.a[3].setKeep(false);
     	check5.setSelected(false); h.a[4].setKeep(false);
+    	
+    	Roll();
+    	
     
     }
 }
