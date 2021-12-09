@@ -30,8 +30,12 @@ public class GamePlayController {
 	
 //counters for turns (max 13), players (max players.size()), and rolls (max 3)
 	private int turnCounter=0;
+	private int playerCounter=0;
 	private int rollCounter=0;
-
+	
+//boolean values for labels final/editable
+	//0=yahtzee, 1=ones, 2=twos, 3=threes, 4=fours, 5=fives, 6=sixes, 7=tok, 8=fok, 9=fh, 10=ss, 11=ls, 12=chance
+	private boolean[] finalLabels = {false, false, false, false, false, false, false, false, false, false, false, false, false};
 	
 	private int checkCount=0;
 	
@@ -428,24 +432,12 @@ public class GamePlayController {
      * sets final label to whatever score the hand has in the tos category
      * @param event
      */
-<<<<<<< HEAD
     void chooseFour(ActionEvent event) {
-    	players.get(currentPlayer).setFours(Main.intStringToInt(fours.getText()));
-    	players.get(currentPlayer).foursFinal=true;
-
-=======
-    void chooseFour(ActionEvent event) {
->>>>>>> branch 'main' of https://github.com/lywysocki/COMP1050-FinalProject.git
     	if (checkCount == 0) {
     		players.get(currentPlayer).setFours(Main.intStringToInt(fours.getText()));
         	players.get(currentPlayer).foursFinal=true;
         	checkBoxNext();
-<<<<<<< HEAD
     	} else errorCheck();
-
-=======
-    	}
->>>>>>> branch 'main' of https://github.com/lywysocki/COMP1050-FinalProject.git
     }
 
     @FXML
