@@ -73,41 +73,41 @@ public class GamePlayController {
     
 
     @FXML
-    private Label ones;
+    private Label ones=new Label("0");
     @FXML
-    private Label twos;
+    private Label twos=new Label("0");
     @FXML
-    private Label threes;
+    private Label threes=new Label("0");
     @FXML
-    private Label fours;
+    private Label fours=new Label("0");
     @FXML 
-    private Label fives;
+    private Label fives=new Label("0");
     @FXML
-    private Label sixes;
+    private Label sixes=new Label("0");
     @FXML
-    private Label bonus = new Label("35");
+    private Label bonus = new Label("0");
     @FXML
-    private Label upperTotal1;
+    private Label upperTotal1=new Label("0");
     @FXML
-    private Label tok;
+    private Label tok=new Label("0");
     @FXML
-    private Label fok;
+    private Label fok=new Label("0");
     @FXML
-    private Label fh = new Label("25");
+    private Label fh = new Label("0");
     @FXML
-    private Label smStraight = new Label("30");
+    private Label smStraight = new Label("0");
     @FXML
-    private Label lgStraight = new Label("40");
+    private Label lgStraight = new Label("0");
     @FXML
-    private Label chance;
+    private Label chance=new Label("0");
     @FXML
-    private Label yahtzee = new Label("50");
+    private Label yahtzee = new Label("0");
     @FXML
-    private Label lowerTotal;
+    private Label lowerTotal=new Label("0");
     @FXML
-    private Label upperTotal2;
+    private Label upperTotal2=new Label("0");
     @FXML
-    private Label grandTotal;
+    private Label grandTotal=new Label("0");
     
     
     
@@ -194,37 +194,37 @@ public class GamePlayController {
 		//Yahtzee possible points
 			}
 			if(Hand.hasAmountOf(h.getHandValue(), 5) && !yahtzeeFinal) {
-				yahtzee.setVisible(true);
+				yahtzee.setText("50");
 			}
 			else if (!Hand.hasAmountOf(h.getHandValue(), 5)) {
-				yahtzee.setVisible(false);
+				yahtzee.setText("0");
 			}
 			
 			
 		//Full House possible points
 			if(Hand.isFullHouse(h.getHandValue()) && !fhFinal) {
-				fh.setVisible(true);
+				fh.setText("25");
 			}
 			else if (!Hand.isFullHouse(h.getHandValue())) {
-				fh.setVisible(false);
+				fh.setText("0");
 			}
 			
 			
 		//Small Straight possible points
 			if(Hand.isSmallStraight(h.getHandValue()) && !ssFinal) {
-				smStraight.setVisible(true);
+				smStraight.setText("30");
 			}
 			else if (!Hand.isSmallStraight(h.getHandValue())) {
-				smStraight.setVisible(false);
+				smStraight.setText("0");
 			}
 			
 			
 		//Large Straight possible points
 			if(Hand.isLargeStraight(h.getHandValue()) && !lsFinal) {
-				lgStraight.setVisible(true);
+				lgStraight.setText("40");
 			}
 			else if (!Hand.isLargeStraight(h.getHandValue())) {
-				lgStraight.setVisible(false);
+				lgStraight.setText("0");
 			}
 			
 			rollCounter+=1;
