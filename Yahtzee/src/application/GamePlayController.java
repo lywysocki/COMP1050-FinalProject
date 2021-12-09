@@ -407,8 +407,16 @@ public class GamePlayController {
      * @param event
      */
     void chooseFour(ActionEvent event) {
+<<<<<<< HEAD
     	players.get(currentPlayer).setFours(Main.intStringToInt(fours.getText()));
     	players.get(currentPlayer).foursFinal=true;
+=======
+    	if (checkCount == 0) {
+    		players.get(currentPlayer).setFours(Main.intStringToInt(fours.getText()));
+        	players.get(currentPlayer).foursFinal=true;
+        	checkBoxNext();
+    	} else errorCheck();
+>>>>>>> branch 'main' of https://github.com/lywysocki/COMP1050-FinalProject.git
     }
 
     @FXML
