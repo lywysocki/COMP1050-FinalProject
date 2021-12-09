@@ -21,7 +21,7 @@ public class NameEnterPageController implements Initializable {
     @FXML
     private Button BTNnewPlayerName;
   
-    private int playerNumber=1;
+    private int playerNumber=0;
     
     @FXML
     private Label playerNamePromptLabel;
@@ -34,20 +34,18 @@ public class NameEnterPageController implements Initializable {
     
     public void initData(ArrayList<Player> players) {
     	this.players=players;
-    	playerNamePromptLabel.setText(String.format("Player %d, please enter your name", playerNumber));
-    	System.out.printf("size of arraylist: %d%n", players.size());
+    	playerNamePromptLabel.setText(String.format("Player %d, please enter your name", playerNumber+1));
     }
     
     @FXML
     void newPlayerNameClicked(ActionEvent event) throws IOException {
     	if(playerNumber<players.size()) {
-    		players.get(playerNumber-1).setName(playerNametf.getText());
-    		playerNametf.deleteText(0, (playerNametf.getText().length()));
+    		players.get(playerNumber).setName(playerNametf.getText());
     		playerNumber+=1;
-    		playerNamePromptLabel.setText(String.format("Player %d, please enter your name", playerNumber));
-    		System.out.printf("Player %d name: %s%n", playerNumber-1, players.get(playerNumber-2).getName());
-    	}
-    	else {
+    		if(playerNumber<players.size()) {
+    			playerNametf.deleteText(0, (playerNametf.getText().length()));
+    			playerNamePromptLabel.setText(String.format("Player %d, please enter your name", (playerNumber+1)));
+    		}else {
     		FXMLLoader loader = new FXMLLoader();
     		loader.setLocation(getClass().getResource("Game.fxml"));
     		Parent gameView= loader.load();
@@ -60,6 +58,8 @@ public class NameEnterPageController implements Initializable {
     		window.setScene(gamePlayScene);
     		window.show();
     	}
+    	}
+    	
     }
 
     
