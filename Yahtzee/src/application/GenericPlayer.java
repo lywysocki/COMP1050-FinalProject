@@ -6,6 +6,7 @@ abstract public class GenericPlayer extends Hand {
 	protected boolean doneRolling;
 	protected int[] upper = {0, 0, 0, 0, 0, 0};
 	protected int[] lower = {0, 0, 0, 0, 0, 0, 0};
+	protected int turnCounter =0;
 	
 	boolean onesFinal;
 	boolean twosFinal;
@@ -41,13 +42,22 @@ abstract public class GenericPlayer extends Hand {
 		yahtzeeFinal=false;
 		
 	}
-	
-	public int getTotalScore() {
-		int total = 0;
-		for (int i=0; i<6; i++) {
-			total+=upper[i]+lower[i];
+	public int getTotalUpper() {
+		int total=0;
+		for(int i=0;i<upper.length;i++) {
+			total+=upper[i];
 		}
 		return total;
+	}
+	public int getTotalLower() {
+		int total=0;
+		for(int i=0;i<lower.length;i++) {
+			total+=lower[i];
+		}
+		return total;
+	}
+	public int getTotalScore() {
+		return getTotalUpper() + getTotalLower();
 	}
 	
 	public void setOnes(int amt) {

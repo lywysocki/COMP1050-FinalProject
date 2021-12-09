@@ -22,7 +22,7 @@ public class GamePlayController {
 	private int currentPlayer=0;
 	
 //counters for turns (max 13), players (max players.size()), and rolls (max 3)
-	private int turnCounter=0;
+	
 	private int playerCounter=0;
 	private int rollCounter=0;
 	
@@ -560,6 +560,11 @@ public class GamePlayController {
     	
     	Roll();
     	
+    	players.get(currentPlayer).turnCounter++;
+    	
+    	if(players.get(players.size()-1).turnCounter == 13) {
+    		
+    	}
     
     }
 }
