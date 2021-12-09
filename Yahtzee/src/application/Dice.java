@@ -2,8 +2,6 @@ package application;
 
 import java.util.Random;
 
-import javafx.scene.image.ImageView;
-
 public class Dice {
 	
 	String[] s = {"d1.jpg","d2.jpg","d3.jpg","d4.jpg","d5.jpg","d6.jpg"};
@@ -29,6 +27,7 @@ public class Dice {
 	public void setKeep(boolean k) { // switches between being kept or not kept
 		kept=k;
 	}
+	
 	public void setValue(int i) {
 		diceValue = i;
 	}

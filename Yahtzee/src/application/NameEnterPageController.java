@@ -1,14 +1,10 @@
 package application;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -17,7 +13,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class NameEnterPageController implements Initializable {
+public class NameEnterPageController {
     @FXML
     private Button BTNnewPlayerName;
   
@@ -27,7 +23,6 @@ public class NameEnterPageController implements Initializable {
     private Label playerNamePromptLabel;
     
     private ArrayList<Player> players;
-    private ArrayList<String> names;
 
     @FXML
     private TextField playerNametf;
@@ -59,18 +54,7 @@ public class NameEnterPageController implements Initializable {
     		window.show();
     	}
     	}
-    	
     }
-
-    
-    
-    
-  
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		
-		
-	}
 }
 
 	
